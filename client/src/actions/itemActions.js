@@ -57,16 +57,6 @@ export function updateItem(item, id) {
       user: item.user,
       fridgeId: id
     }) 
-<<<<<<< HEAD
-      .then((response) => {
-        dispatch({type: 'UPDATE_ITEM_FULFILLED', payload: response.data[1]})
-      })
-      .catch(err => {
-        dispatch({type: 'UPDATE_ITEM_REJECTED', payload: err})
-      });
-  };
-};
-=======
     .then((response) => {
       dispatch({type: 'UPDATE_ITEM_FULFILLED', payload: response.data[1]});
     })
@@ -75,7 +65,6 @@ export function updateItem(item, id) {
     })
   }
 }
->>>>>>> [Add] Add new dispatch to update on delete
 
 export function deleteItem(id) {
   return function(dispatch) {
@@ -85,14 +74,7 @@ export function deleteItem(id) {
         dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => {
-<<<<<<< HEAD
         dispatch({type: 'DELETE_ITEM_REJECTED', payload: err})
       });
   };
 };
-=======
-        dispatch({type: 'DELETE_ITEM_REJECTED', payload: err});
-      })
-  }
-}
->>>>>>> [Add] Add new dispatch to update on delete

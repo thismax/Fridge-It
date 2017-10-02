@@ -3,7 +3,7 @@
 ### Overview
 Fridge-It is a web-app that allows users to keep track of the items in their fridge and intuitively responds with recipe ideas. Multiple users can interact with one fridge and can post bulletin board messages for all of the viewers of the fridge to see. 
 
-###Tech Stack
+### Tech Stack
 * nodejs 
 * express
 * postgresql
@@ -19,13 +19,21 @@ External api: Spoonacular
 
 If you are not already familiar with Redux, here are the videos we used. Be sure to finish the series in order to get all of the information available: https://www.youtube.com/watch?v=1w-oQ-i1XB8
 
-###Start Up
+### Start Up
 In order to get this app running, begin with 'npm install'. Then run 'npm start' in order to start nodemon and 'npm run compile' to run webpack. You can view the app in the browser using localhost:3000.
 
-RESTful API
-you can find the request routes at server > routes > index.js
+### RESTful API
+You can find the request routes at server > routes > index.js
 
-###Developers
+### Spoonacular
+Follow steps on https://spoonacular.com/ in order to get an api key
+
+### Environmental Variables
+You will need 2 variables in your .env:
+* DB_URL: to link to your postgress database (elephantsql)
+* API_KEY: to hold your Spoonacular api key
+
+### Developers
 The developers of this app:
 * Tiffany Phan (project owner)
 * Angie Tang (developer)

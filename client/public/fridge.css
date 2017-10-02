@@ -1,0 +1,110 @@
+.container {
+  position: relative;
+  height: 700px;
+  width: 450px;
+  border: none;
+  margin: 0 auto;
+  border-radius: .285716rem;
+}
+
+.frozen {
+  position: absolute;
+  border-radius: .28571429rem;
+  background-color: #bad5dd;
+  height: 200px;
+  width: 450px;
+  border: none;
+  bottom: 500px;
+  background-image: url("https://image.flaticon.com/icons/svg/251/251942.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.protein {
+  position: absolute;
+  border-radius: .28571429rem;
+  background-color: #FC7E7E;
+  height: 145px;
+  width: 220px;
+  border: none;
+  bottom: 345px;
+  left: 0px;
+  background-image: url("https://image.flaticon.com/icons/svg/579/579121.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 20px right 50%;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.grains {
+  position: absolute;
+  border-radius: .28571429rem;
+  background-color: #F2CC7B;
+  height: 145px;
+  width: 220px;
+  border: none;
+  bottom: 345px;
+  right: 0px;
+  background-image: url('https://image.flaticon.com/icons/svg/135/135634.svg');
+  background-repeat: no-repeat;
+  background-position: bottom 20px right 50%;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.dairy {
+  position: absolute;
+  border-radius: .28571429rem;
+  background-color: #A5C6EF;
+  height: 125px;
+  width: 450px;
+  border: none;
+  bottom: 210px;
+  background-image: url('https://image.flaticon.com/icons/svg/571/571475.svg');
+  background-repeat: no-repeat;
+  background-position: bottom 10px right 50%;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.produce {
+  position: absolute;
+  border-radius: .28571429rem;
+  background-color: #A2D8C0;
+  height: 200px;
+  width: 290px;
+  border: none;
+  bottom: 0px;
+  left: 0px;
+  background-image: url('https://image.flaticon.com/icons/svg/135/135715.svg');
+  background-repeat: no-repeat;
+  background-position: bottom 50px right 50%;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.misc {
+  position: absolute;
+  text-align:center;
+  border-radius: .28571429rem;
+  background-color: #e5a5c2;
+  height: 200px;
+  width: 150px;
+  border: none;
+  bottom: 0px;
+  right: 0px;
+  background-image: url('https://image.flaticon.com/icons/svg/362/362281.svg');
+  background-repeat: no-repeat;
+  background-position: bottom 50px right 50%;
+  background-size: 75px;
+  text-align: center; 
+}
+
+.text {
+  position: relative;
+  top: 10px;
+  font-size: 150%;
+  color: white
+}

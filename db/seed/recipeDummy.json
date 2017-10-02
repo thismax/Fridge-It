@@ -1,0 +1,85 @@
+{
+  "data": [
+    {
+      "id": 556470,
+      "title": "Apple fritters",
+      "image": "https://spoonacular.com/recipeImages/Apple-fritters-556470.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 243
+    },
+    {
+      "id": 73474,
+      "title": "Apple Turnovers",
+      "image": "https://spoonacular.com/recipeImages/apple-turnovers-2-73474.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 48
+    },
+    {
+      "id": 47950,
+      "title": "Cinnamon Apple Crisp",
+      "image": "https://spoonacular.com/recipeImages/cinnamon_apple_crisp-47950.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 35
+    },
+    {
+      "id": 534573,
+      "title": "Brown Butter Apple Crumble",
+      "image": "https://spoonacular.com/recipeImages/Brown-Butter-Apple-Crumble-534573.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 7
+    },
+    {
+      "id": 70306,
+      "title": "Easy Cinnamon Apple Pie",
+      "image": "https://spoonacular.com/recipeImages/easy-cinnamon-apple-pie-2-70306.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 5
+    },
+    {
+      "id": 48416,
+      "title": "French Apple Tart",
+      "image": "https://spoonacular.com/recipeImages/french_apple_tart-48416.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 1
+    },
+    {
+      "id": 47732,
+      "title": "Apple Tart",
+      "image": "https://spoonacular.com/recipeImages/apple_tart-47732.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 0
+    },
+    {
+      "id": 47891,
+      "title": "Apple Tart",
+      "image": "https://spoonacular.com/recipeImages/apple_tart-47891.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 0
+    },
+    {
+      "id": 55263,
+      "title": "Apple-Cranberry Crisp",
+      "image": "https://spoonacular.com/recipeImages/apple-cranberry-crisp-55263.jpg",
+      "imageType": "jpg",
+      "usedIngredientCount": 3,
+      "missedIngredientCount": 0,
+      "likes": 0
+    }
+  ]
+}

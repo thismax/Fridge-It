@@ -6,6 +6,7 @@ const initialState = {
   error: null
 }
 
+// Catches actions for fetching, fetched, and item(deletion/addition)
 const searchReducer = (state=initialState, action) => {
   switch(action.type) {
     
@@ -24,11 +25,15 @@ const searchReducer = (state=initialState, action) => {
         recipes: action.payload,
       });
     }
-
+    case "NEW_ITEM_POSTED": {
+      return Object.assign({}, state, {
+        fetched: false,
+      });
+    }
     default: {
       return state;
     }
-  }
-}
+  };
+};
 
 export default searchReducer;

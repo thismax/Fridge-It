@@ -1,7 +1,7 @@
 const unirest = require('unirest');
 require('dotenv').config();
 
-// Import example data
+// EXAMPLE DATA
 const temp = require('../../db/seed/recipeDummy.json');
 
 const search = {

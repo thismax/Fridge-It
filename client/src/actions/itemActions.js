@@ -7,10 +7,10 @@ export function getItems(fridgeId) {
   return function(dispatch) {
     axios.get('/api/items/' + fridgeId)
       .then(({ data }) => {
-        dispatch({type: 'FETCH_ITEMS_FULFILLED', payload: data})
+        dispatch({type: 'FETCH_ITEMS_FULFILLED', payload: data});
       })
       .catch(err => { 
-        dispatch({type: 'FETCH_ITEMS_REJECTED', payload: err})
+        dispatch({type: 'FETCH_ITEMS_REJECTED', payload: err});
       });
   };
 };
@@ -25,10 +25,11 @@ export function addItem(item, id) {
       fridgeId: id,
     })
       .then(({ data }) => {
-        dispatch({type: 'POST_ITEM_FULFILLED', payload: data})
+        dispatch({type: 'POST_ITEM_FULFILLED', payload: data});
+        dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => { 
-        dispatch({type: 'POST_ITEM_REJECTED', payload: err})
+        dispatch({type: 'POST_ITEM_REJECTED', payload: err});
       });
   };
 };
@@ -42,23 +43,24 @@ export function updateItem(item, id) {
       user: item.user,
       fridgeId: id
     }) 
-      .then((response) => {
-        dispatch({type: 'UPDATE_ITEM_FULFILLED', payload: response.data[1]})
-      })
-      .catch(err => {
-        dispatch({type: 'UPDATE_ITEM_REJECTED', payload: err})
-      });
-  };
-};
+    .then((response) => {
+      dispatch({type: 'UPDATE_ITEM_FULFILLED', payload: response.data[1]});
+    })
+    .catch(err => {
+      dispatch({type: 'UPDATE_ITEM_REJECTED', payload: err});
+    })
+  }
+}
 
 export function deleteItem(id) {
   return function(dispatch) {
     axios.delete('api/items/' + id)
       .then((response) => {
-        dispatch({type: 'DELETE_ITEM_FULFILLED', payload: response.data})
+        dispatch({type: 'DELETE_ITEM_FULFILLED', payload: response.data});
+        dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => {
-        dispatch({type: 'DELETE_ITEM_REJECTED', payload: err})
+        dispatch({type: 'DELETE_ITEM_REJECTED', payload: err});
       });
   };
 };

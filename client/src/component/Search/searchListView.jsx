@@ -26,10 +26,12 @@ class SearchListView extends Component {
       return (
         <div>
           <h2 className='ui dividing header'>Recommended Recipes</h2>
-          <Message>
-            <Message.Header content={'No Recipes to Show'} />
-          <p style={{textAlign: 'center'}}>Add ingredients to the Fridge if you'd like to see some recipes!</p>
-          </Message>
+          <div style={{textAlign: 'center'}}>
+            <Message>
+              <Message.Header content={'No Recipes to Show'} />
+            <p>Add ingredients to the Fridge if you'd like to see some recipes!</p>
+            </Message>
+          </div>
         </div>
       )
     } else {

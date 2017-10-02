@@ -14,7 +14,6 @@ class Home extends Component {
   }
 
   componentWillMount() {
-
     this.props.actions.getFridge(localStorage.getItem('name'));
   };
 

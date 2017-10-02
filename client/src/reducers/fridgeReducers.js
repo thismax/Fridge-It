@@ -11,22 +11,18 @@ const initialState = {
 
 const fridgeReducer = (state=initialState, action) => {
   switch(action.type) {
-
     case 'FETCH_FRIDGE_PENDING': {
       return Object.assign({}, state, {fetching: true});
     }
-
     case 'FETCH_FRIDGE_REJECTED': {
       return Object.assign({}, state, {fetching: false, error: action.payload});
     }
-
     case 'FETCH_FRIDGE_FULFILLED': {
       return Object.assign({}, state, {
         fetching: false,
         fetched: true,
         fridge: Object.assign(action.payload)
       })
-      break; 
     }
 
     case 'POST_FRIDGE_PENDING': {

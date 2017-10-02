@@ -49,7 +49,11 @@ class MessageListEntry extends Component {
 
     return (
       <Card.Group>
+<<<<<<< HEAD
         <Card style={{backgroundColor: "#FFFBBB"}}>
+=======
+        <Card style={{backgroundColor="#FFFBBB"}}>
+>>>>>>> [Update] Add color to messages
           <Card.Content>
             <div style={style}>
               <Icon name="pin" size="large" color="teal" />

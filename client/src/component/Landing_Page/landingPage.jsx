@@ -124,7 +124,7 @@ class LandingPage extends Component {
               They realized that the idea of keeping track of food was important for all students, thus
               Fridge-It was born! 
             </p>
-            <Button as='a' href='https://github.com/TEAM-TADA' size='large'>Read More</Button>
+            <Button as='a' href='https://github.com/TEAM-TADA' size='large' target="_blank">Read More</Button>
             <Divider
               as='h4'
               className='header'
@@ -139,7 +139,7 @@ class LandingPage extends Component {
               <br/>The project owner of this app is Tiffany Phan.
               <br/>The scrum master of this app is Daniel Chong. 
             </p>
-            <Button as='a' href="https://github.com/TEAM-TADA" size='large'>I'm Still Quite Interested</Button>
+            <Button as='a' href="https://github.com/TEAM-TADA" size='large' target="_blank">I'm Still Quite Interested</Button>
           </Container>
         </Segment>
         <Segment inverted vertical style={{ padding: '5em 0em' }}>

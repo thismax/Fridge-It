@@ -10,17 +10,10 @@ export function getItems(fridgeId) {
         dispatch({type: 'FETCH_ITEMS_FULFILLED', payload: data});
       })
       .catch(err => { 
-<<<<<<< HEAD
-        dispatch({type: 'FETCH_ITEMS_REJECTED', payload: err})
+        dispatch({type: 'FETCH_ITEMS_REJECTED', payload: err});
       });
   };
 };
-=======
-        dispatch({type: 'FETCH_ITEMS_REJECTED', payload: err});
-      })
-  }
-}
->>>>>>> [Add] Add new dispatch to update on delete
 
 export function addItem(item, id) {
   return function(dispatch) {
@@ -36,17 +29,10 @@ export function addItem(item, id) {
         dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => { 
-<<<<<<< HEAD
-        dispatch({type: 'POST_ITEM_REJECTED', payload: err})
+        dispatch({type: 'POST_ITEM_REJECTED', payload: err});
       });
   };
 };
-=======
-        dispatch({type: 'POST_ITEM_REJECTED', payload: err});
-      })
-  }
-}
->>>>>>> [Add] Add new dispatch to update on delete
 
 export function updateItem(item, id) {
   return function(dispatch) {

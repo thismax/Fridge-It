@@ -15,7 +15,11 @@ class MessageListEntry extends Component {
     //this method is in charge of the like button. When the thumbs up is clicked, 
     //LikeView will check to see if the current user has liked this post and responds accordingly
     const LikeView = (
+<<<<<<< HEAD
       <Button basic color={'black'} icon='thumbs outline up'
+=======
+      <Button basic color={'black'}  icon='thumbs outline up'
+>>>>>>> [Edit] Edit button to style
       onClick={
         () => {
           if (!message.like.includes(localStorage.getItem('name'))) {
@@ -31,7 +35,11 @@ class MessageListEntry extends Component {
 
     //this method is in charge of the delete button
     const deleteButton = (
+<<<<<<< HEAD
       <Button basic color={'black'} onClick={() => {
+=======
+      <Button basic color={'black'}  onClick={() => {
+>>>>>>> [Edit] Edit button to style
           deleteMessages(message.id)
       }}>              
         <Icon name="remove" />

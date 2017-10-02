@@ -25,7 +25,8 @@ export function addItem(item, id) {
       fridgeId: id,
     })
       .then(({ data }) => {
-        dispatch({type: 'POST_ITEM_FULFILLED', payload: data})
+        dispatch({type: 'POST_ITEM_FULFILLED', payload: data});
+        dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => { 
         dispatch({type: 'POST_ITEM_REJECTED', payload: err})

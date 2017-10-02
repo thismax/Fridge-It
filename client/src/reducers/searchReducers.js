@@ -24,11 +24,15 @@ const searchReducer = (state=initialState, action) => {
         recipes: action.payload,
       });
     }
-
+    case "NEW_ITEM_POSTED": {
+      return Object.assign({}, state, {
+        fetched: false,
+      });
+    }
     default: {
       return state;
     }
-  }
-}
+  };
+};
 
 export default searchReducer;

@@ -33,6 +33,12 @@ You will need 2 variables in your .env:
 * DB_URL: to link to your postgress database (elephantsql)
 * API_KEY: to hold your Spoonacular api key
 
+You will need 4 variables in your firebase.json:
+* FIREBASE_API_KEY: to hold your firebase api key
+* FIREBASE_AUTH_DOMAIN: link to your auth domain
+* FIREBASE_DB_URL: link to your fb database
+* FIREBASE_STORAGE_BUCKET: link to your storage bucket
+
 ### Developers
 The developers of this app:
 * Tiffany Phan (project owner)

@@ -12,13 +12,15 @@ const ItemList = (props) => {
           <Table.Row>
             <Table.HeaderCell>qty</Table.HeaderCell>
             <Table.HeaderCell>name</Table.HeaderCell>
+            <Table.HeaderCell>date added</Table.HeaderCell>
+            <Table.HeaderCell>user</Table.HeaderCell>
             <Table.HeaderCell colSpan='3'>edit</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
           {props.items.map(item => (
-            <Item {...props.actions} name={item.name} quantity={item.quantity} type={item.type} id={item.id} key={item.id}/>
+            <Item {...props.actions} name={item.name} quantity={item.quantity} type={item.type} id={item.id} key={item.id} date={item.createdAt.split('T')[0]} user={item.user.split('@')[0]}/>
           ))}
         </Table.Body>
       </Table> 

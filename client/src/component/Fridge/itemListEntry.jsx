@@ -8,6 +8,8 @@ const Item = (props) => {
     <Table.Row>
       <Table.Cell textAlign="center">{props.quantity}</Table.Cell>
       <Table.Cell textAlign="left">{props.name}</Table.Cell>
+      <Table.Cell textAlign="left">{props.date}</Table.Cell>
+      <Table.Cell textAlign="left">{props.user}</Table.Cell>
       <Table.Cell>
           <Icon 
             size="small"

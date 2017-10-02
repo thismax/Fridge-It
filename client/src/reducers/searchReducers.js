@@ -6,6 +6,7 @@ const initialState = {
   error: null
 }
 
+// Catches actions for fetching, fetched, and item(deletion/addition)
 const searchReducer = (state=initialState, action) => {
   switch(action.type) {
     

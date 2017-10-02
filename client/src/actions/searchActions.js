@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// Sends request to SERVER which calls External API
 export function fetchRecipes(ingredients) {
   return function(dispatch) {
     axios.put('/api/search', {

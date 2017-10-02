@@ -44,6 +44,7 @@ const MessageInfo = sequelize.define('messageInfo', {
   }
 });
 
+// Foreign Keys
 FridgeItems.belongsTo(Fridge, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
 Fridge.hasMany(FridgeItems, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
 

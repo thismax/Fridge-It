@@ -14,6 +14,8 @@ const initialState = {
 
 }
 
+//reducers create a new state depending on the actions
+
 const messageReducer = (state=initialState, action) => {
   switch(action.type) {
 

@@ -12,6 +12,8 @@ class MessageListEntry extends Component {
       textAlign: "center",
     }
 
+    //this method is in charge of the like button. When the thumbs up is clicked, 
+    //LikeView will check to see if the current user has liked this post and responds accordingly
     const LikeView = (
       <Button basic color={'black'} icon='thumbs outline up'
       onClick={
@@ -27,6 +29,7 @@ class MessageListEntry extends Component {
       } /> 
     )
 
+    //this method is in charge of the delete button
     const deleteButton = (
       <Button basic color={'black'} onClick={() => {
           deleteMessages(message.id)
@@ -35,6 +38,7 @@ class MessageListEntry extends Component {
       </Button>
     )
     
+
     return (
       <Card.Group>
         <Card style={{backgroundColor: "#FFFBBB"}}>

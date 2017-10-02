@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+// communicates with backend, sets the redux state. 
+
 export const fetchMessages = (fridgeId) => {
   return function(dispatch) {
     axios.get('/api/allMessages/' + fridgeId)

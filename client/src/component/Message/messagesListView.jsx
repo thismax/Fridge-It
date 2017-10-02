@@ -11,6 +11,7 @@ class MessageListView extends Component {
     super(props);
   }
 
+  //fridge needs to be mounted first in order to get the fridgeId
   componentDidMount() {
     let state = this;
     setTimeout(() => {
@@ -22,6 +23,7 @@ class MessageListView extends Component {
     const { messageList, messageFetched, messageFetching, fridge, actions } = this.props;
     let username = localStorage.getItem('name');
 
+    //regulates handle submit to trigger post message if the input values are valid
     const handleSubmit = () => {
       let inputMsg = document.getElementById('inputMsg');
       if (inputMsg.value.match(/[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]/i) ) {
@@ -56,6 +58,7 @@ class MessageListView extends Component {
   }
 };
 
+//monitors state with redux
 const mapState = (store) => {
   return {
     fridge: store.fridge.fridge,
@@ -69,10 +72,12 @@ const mapState = (store) => {
   }
 };
 
+//brings in actions. bindActionCreators lets us use actions as props
 const mapDispatch = (dispatch) => {
   return {
     actions: bindActionCreators(messageActions, dispatch),
   }
 };
 
+//connects state and dispatch to MessageListView component
 export default connect(mapState, mapDispatch)(MessageListView);

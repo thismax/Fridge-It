@@ -74,7 +74,7 @@ export function deleteItem(id) {
         dispatch({type: 'NEW_ITEM_POSTED'});
       })
       .catch(err => {
-        dispatch({type: 'DELETE_ITEM_REJECTED', payload: err})
+        dispatch({type: 'DELETE_ITEM_REJECTED', payload: err});
       });
   };
 };

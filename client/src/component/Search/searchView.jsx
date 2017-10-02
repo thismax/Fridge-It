@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Card } from 'semantic-ui-react';
+import { Card, Message } from 'semantic-ui-react';
 
 import * as searchActions from '../../actions/searchActions.js';
 import SearchListEntry from './searchListEntry.jsx';
@@ -27,7 +27,12 @@ class SearchView extends Component {
     }
 
     return (
-      <div>SEARCH VIEW</div>
+      <div style={{textAlign: 'center'}}>
+        <Message>
+          <Message.Header content={'No Recipes to Show'} />
+          <p>Try Adding in Some Ingredients in Your Fridge on the Home Page!</p>
+        </Message>
+      </div>
     )
   }
 };

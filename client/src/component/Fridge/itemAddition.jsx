@@ -91,7 +91,7 @@ class itemAddition extends Component {
             }}
           />
           <Form.Button 
-            content='Go'/>
+            content='Add'/>
         </Form.Group>
       </Form>
     )

@@ -3,13 +3,13 @@ import FB from '../../../firebase.json';
 
 // Config file from Firebase project console. Hidden values found in firebase.json.
 var config = {
-  apiKey: FB.FIREBASE_API_KEY,
-  authDomain: FB.FIREBASE_AUTH_DOMAIN,
-  databaseURL: FB.FIREBASE_DB_URL,
-  projectId: "test-76764",
-  storageBucket: FB.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: "703554623980"
-};
+    apiKey: FB.apiKey,
+    authDomain: FB.authDomain,
+    databaseURL: FB.databaseURL,
+    projectId: FB.projectId,
+    storageBucket: FB.storageBucket,
+    messagingSenderId: "614537900777"
+  };
   
 firebase.initializeApp(config);
 

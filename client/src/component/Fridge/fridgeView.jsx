@@ -5,6 +5,7 @@ import { Popup, Button, Input, Form } from 'semantic-ui-react';
 
 import ItemListView from './itemListView.jsx';
 import ItemAddition from './itemAddition.jsx';
+import ShareWidget from '../ShareWidget/ShareWidget.jsx';
 
 import * as fridgeActions from '../../actions/fridgeActions.js';
 import * as itemActions from '../../actions/itemActions.js';
@@ -75,6 +76,7 @@ class Fridge extends Component {
     //create popup to show list
     return (
       <div>
+        <ShareWidget />
         <h2 className='ui dividing header'>{fridge.name && fridge.name.split('@')[0]}'s Fridge</h2>
         <div>
           <Form>

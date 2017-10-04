@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Form, Button, Input, Select } from 'semantic-ui-react'
-
-import * as itemActions from '../../actions/itemActions.js'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Form, Button, Input, Select } from 'semantic-ui-react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import * as itemActions from '../../actions/itemActions.js';
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 
 class itemAddition extends Component {
@@ -90,8 +92,13 @@ class itemAddition extends Component {
               type = value;
             }}
           />
+          <Form.Field
+            placeholder='date'
+            control={DatePicker}
+          />
           <Form.Button 
-            content='Go'/>
+            content='Go'
+          />
         </Form.Group>
       </Form>
     )

@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "nodemon server/server.js",
+=======
+    "start": "node server/server.js",
+>>>>>>> configure firebase, other dependencies
     "compile": "webpack --watch",
     "build": "webpack -d",
     "test": "echo \"Error: no test specified\" && exit 1",

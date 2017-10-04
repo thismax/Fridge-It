@@ -23,8 +23,6 @@ class ShareWidget extends Component {
 
   constructor(props) {
     super(props);
-    //shareUrl
-    //title
     
   }
 
@@ -32,16 +30,18 @@ class ShareWidget extends Component {
 
 
   render() {
-    const shareUrl = this.props.shareUrl;
-    const title = this.props.title;
+    let shareUrl = this.props.shareUrl;
+    let title = this.props.title;
+    let shareUrlMailBody = 'link: ' + this.props.shareUrl;
+    let shareUrlTwitterBody = 'http:\/\/' + this.props.shareUrl;
 
     return (
       <div>
         <ul className="share-widget-list">
         <li>
           <FacebookShareButton
-            url={this.props.shareUrl}
-            quote={this.props.title}
+            url={shareUrl}
+            quote={title}
             className="facebook-share-button">
             <FacebookIcon
               size={32}
@@ -50,7 +50,7 @@ class ShareWidget extends Component {
         </li>
         <li>
           <TwitterShareButton
-            url={shareUrl}
+            url={shareUrlTwitterBody}
             title={title}
             className="twitter-share-button">
             <TwitterIcon
@@ -59,19 +59,10 @@ class ShareWidget extends Component {
           </TwitterShareButton>
         </li>
         <li>
-          <PinterestShareButton
-            url={String(window.location)} //i deleted a prop here. check the examples in the repo
-            windowWidth={1000}
-            windowHeight={730}
-            className="pinterest-share-button">
-            <PinterestIcon size={32} round />
-          </PinterestShareButton>
-        </li>
-        <li>
           <EmailShareButton
             url={shareUrl}
             subject={title}
-            body="body"
+            body={shareUrlMailBody}
             className="email-share-button">
             <EmailIcon
               size={32}

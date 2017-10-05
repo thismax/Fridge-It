@@ -20,7 +20,8 @@ export function addFridge(fridge) {
   return function(dispatch) {
     axios.post('/api/fridge', {
       users: fridge.users,
-      name: fridge.name
+      name: fridge.name,
+      phone: fridge.phone,
     })
       .then(({ data }) => {
         dispatch({type: 'POST_FRIDGE_FULFILLED', payload: data})

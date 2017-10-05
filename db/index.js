@@ -9,7 +9,10 @@ const Fridge = sequelize.define('fridge', {
   },
   name: {
     type: Sequelize.STRING
-  }
+  },
+  phone: {
+    type: Sequelize.STRING
+  },
 });
 
 const FridgeItems = sequelize.define('fridgeItem', {
@@ -58,6 +61,11 @@ const MessageInfo = sequelize.define('messageInfo', {
   },
   user: {
     type: Sequelize.STRING,
+    model: 'fridge',
+    key: 'id',
+  },
+  fridgeId:{
+    type: Sequelize.INTEGER,
     model: 'fridge',
     key: 'id',
   }

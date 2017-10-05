@@ -14,7 +14,7 @@ class Login extends Component {
   emailSignin() {
     let user = document.getElementById('inputNM');
     let pw = document.getElementById('inputPW');
-    
+     
     this.props.actions.emailLogin(user.value, pw.value);
   };
     
@@ -45,9 +45,6 @@ class Login extends Component {
                 />
                 <input
                   id="inputPW"
-                  fluid
-                  icon='lock'
-                  iconPosition='left'
                   placeholder='Password'
                   type='password'
                 />

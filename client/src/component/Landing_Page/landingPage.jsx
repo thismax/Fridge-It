@@ -14,7 +14,6 @@ class LandingPage extends Component {
 
     return (
       <div>
-        <FixedMenu />
           <div
             id='landingPage'
             style={{ minHeight: 700, padding: '1em 0em' }}
@@ -37,7 +36,7 @@ class LandingPage extends Component {
               <h2
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               ></h2>
-              <button className="btn btn-success" onClick={(e) => {
+              <button type="button" className="btn btn-success" onClick={(e) => {
                 e.preventDefault();
                 this.props.actions.checkItOut();
               }}>

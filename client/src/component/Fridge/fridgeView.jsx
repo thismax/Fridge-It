@@ -8,7 +8,6 @@ import ItemAddition from './itemAddition.jsx';
 
 import * as fridgeActions from '../../actions/fridgeActions.js';
 import * as itemActions from '../../actions/itemActions.js';
-import styles from '../../../public/fridge.css';
 
 class Fridge extends Component {
   constructor(props) {

@@ -22,6 +22,7 @@ export function addItem(item, id) {
       quantity: item.quantity,
       type: item.type,
       user: item.user,
+      expiry: item.expiry,
       fridgeId: id,
     })
       .then(({ data }) => {
@@ -41,6 +42,7 @@ export function updateItem(item, id) {
       quantity: item.quantity, 
       type: item.type,
       user: item.user,
+      expiry: item.expiry,
       fridgeId: id
     }) 
     .then((response) => {

@@ -1,16 +1,27 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Form, Button, Input, Select } from 'semantic-ui-react'
-
-import * as itemActions from '../../actions/itemActions.js'
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Form, Button, Input, Select } from 'semantic-ui-react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import * as itemActions from '../../actions/itemActions.js';
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 class itemAddition extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      startDate: moment(),
+    }
+    this.handleChange = this.handleChange.bind(this);
   }
   
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
   //form to input fridge items
   render() {
     const { itemActions, fridge } = this.props;
@@ -19,18 +30,18 @@ class itemAddition extends Component {
     
     const handleSubmit = () => {
       const item = {};
-      
       let name = document.getElementById('inputItm');
       item.name = name.value;
       let qty = document.getElementById('inputQty');
       item.quantity = qty.value;
+      item.expiry = document.getElementById('expiry').value;
       item.type = type;
       item.user = username;
       itemActions.addItem(item, fridge.id);
       name.value = '';
       qty.value = '';
-      type = '';
     }
+
     const options = [
       {
         key: 1, 
@@ -64,8 +75,6 @@ class itemAddition extends Component {
       }
     ]; 
 
-    const item = {};
-
     return (
       <Form 
         onSubmit={() => {
@@ -90,8 +99,16 @@ class itemAddition extends Component {
               type = value;
             }}
           />
+          <Form.Select
+            placeholder={moment()}
+            id="expiry"
+            control={DatePicker}
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+          />
           <Form.Button 
-            content='Add'/>
+            content='Go'
+          />
         </Form.Group>
       </Form>
     )

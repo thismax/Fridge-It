@@ -9,6 +9,7 @@ const Item = (props) => {
       <Table.Cell textAlign="center">{props.quantity}</Table.Cell>
       <Table.Cell textAlign="left">{props.name}</Table.Cell>
       <Table.Cell textAlign="left">{props.date}</Table.Cell>
+      <Table.Cell textAlign="left">{props.expiry}</Table.Cell>
       <Table.Cell textAlign="left">{props.user}</Table.Cell>
       <Table.Cell>
           <Icon 

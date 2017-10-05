@@ -14,7 +14,7 @@ const FixedMenu = ({ history }) => (
     <div>
       <div>
         <div className="nav navbar">
-          <div class="container">
+          <div className="container">
           <style>{
             `#navbar {
               background-color: #2185d0;
@@ -25,18 +25,18 @@ const FixedMenu = ({ history }) => (
             </div>
             <div>
               <Link to="/">
-                <button content={'Fridge-It'} color={'blue'} size={'massive'}/>
+                <button />
               </Link>
             </div>
-            <div position='right'>
+            <div>
               <div>
                 <Link to="/login">
-                  <button content={'Login'} color={'blue'} size={'large'}/>
+                  <button />
                 </Link>
               </div>
               <div>
                 <Link to="/signup">
-                  <button content={"Signup"} color={'blue'} size={'large'}/>
+                  <button />
                 </Link>
               </div>
             </div>

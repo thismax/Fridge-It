@@ -1,8 +1,11 @@
 const Item = require('../../db/index').fridgeItems;
+require('dotenv').config();
+var client = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_AUTH);
 
 //functions to add items, get items, and delete items from the database using promises
 
 module.exports = {
+
   getAllItems: (req, res) => {
     Item.findAll({
       where: {fridgeId: req.params.fridgeId}
@@ -59,5 +62,23 @@ module.exports = {
     .catch(err => {
       res.status(500).send(err);
     })
+  },
+
+  smsMessage: (req, res) => {
+    client.messages.create({ 
+      to: "+18054283372", 
+      from: "+14243466219", 
+      body: "We spiderman now.", 
+    }, function(err, message) { 
+      if (err) {
+        console.log('====================================')
+        console.log('error => ', err);
+        console.log('====================================')
+      }
+    });
   }
+
 };
+
+
+

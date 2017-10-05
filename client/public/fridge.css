@@ -1,11 +1,11 @@
-.container {
+/* .container {
   position: relative;
   height: 700px;
   width: 450px;
   border: none;
   margin: 0 auto;
   border-radius: .285716rem;
-}
+} */
 
 .frozen {
   position: absolute;
@@ -107,4 +107,37 @@
   top: 10px;
   font-size: 150%;
   color: white
+}
+
+.navbar {
+  background-color: #2185d0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+}
+
+.nav-link:hover {
+  background-color: #1f78bb;
+  color: rgb(255, 255, 255)!important;
+  border-radius: 4px;
+}
+
+.tiny-image {
+  width: 450px;
+  height: auto;
+}
+
+.carousel-caption {
+  padding-bottom: 8%
+}
+
+.carousel-caption h1 {
+  font-size: 5em;
+  margin-bottom: 2%;
+}
+
+.carousel-caption h2 {
+  font-size: 3.5em;
+  margin-bottom: 2%;
 }

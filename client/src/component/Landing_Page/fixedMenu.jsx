@@ -13,7 +13,7 @@ const FixedMenu = ({ history }) => (
   <Router history={history}>
     <div>
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">   
+      <nav className="navbar navbar-expand-lg navbar-light">   
         <a className="navbar-brand" href="#"><img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"  width="30" height="30" alt="" /></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

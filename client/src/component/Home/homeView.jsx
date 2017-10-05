@@ -31,7 +31,6 @@ class HomeView extends Component {
         `}</style>
         <Router history={this.props.history}>
           <div>
-            <div className="navbar">
               <div className="container">
                 <div>
                   <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>
@@ -58,7 +57,6 @@ class HomeView extends Component {
             </div>
             <Route exact path="/home" render={() => {return <Home />}}/>
             <Route path="/search" render={() => {return <Search />}}/>
-          </div>
         </Router>
         </div>
       );

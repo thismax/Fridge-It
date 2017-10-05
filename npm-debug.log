@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'compile' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.1
@@ -13,10 +14,13 @@
 4 verbose stack     at parseJson (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:79:23)
 4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:48:5
 =======
+=======
+>>>>>>> add styling to landing page main image and title
 1 verbose cli [ '/usr/local/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
 1 verbose cli   'live-server' ]
+<<<<<<< HEAD
 2 info using npm@3.10.10
 3 info using node@v6.11.1
 4 verbose stack Error: missing script: live-server
@@ -26,6 +30,11 @@
 3 info using node@v6.11.1
 4 verbose stack Error: missing script: comile
 >>>>>>> remove semantic UI styling
+=======
+2 info using npm@3.10.10
+3 info using node@v6.11.1
+4 verbose stack Error: missing script: live-server
+>>>>>>> add styling to landing page main image and title
 4 verbose stack     at run (/usr/local/lib/node_modules/npm/lib/run-script.js:151:19)
 4 verbose stack     at /usr/local/lib/node_modules/npm/lib/run-script.js:61:5
 4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:356:5
@@ -42,6 +51,7 @@
 4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:443:12)
 5 verbose cwd /Users/newuser/Desktop/repositories/REMOTE/Fridge-It
 6 error Darwin 17.0.0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "compile"
@@ -111,9 +121,12 @@
 >>>>>>> resolve merge conflict
 =======
 7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "comile"
+=======
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "live-server"
+>>>>>>> add styling to landing page main image and title
 8 error node v6.11.1
 9 error npm  v3.10.10
-10 error missing script: comile
+10 error missing script: live-server
 11 error If you need help, you may report this error at:
 11 error     <https://github.com/npm/npm/issues>
 12 verbose exit [ 1, true ]

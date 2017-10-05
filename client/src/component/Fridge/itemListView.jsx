@@ -4,7 +4,7 @@ import { table } from 'semantic-ui-react';
 
 
 //render item list as popup table
-const ItemList = (props) => {
+const ItemList = (props) => { 
   if (props.items.length) {
     return (
       <table celled>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Icon, Button, Form, Card, Image, Popup } from 'semantic-ui-react';
 
 class MessageListEntry extends Component { 
   constructor(props) {
@@ -15,7 +14,7 @@ class MessageListEntry extends Component {
     //this method is in charge of the like button. When the thumbs up is clicked, 
     //LikeView will check to see if the current user has liked this post and responds accordingly
     const LikeView = (
-      <Button basic color={'black'} icon='thumbs outline up'
+      <button 
       onClick={
         () => {
           if (!message.like.includes(localStorage.getItem('name'))) {
@@ -31,48 +30,48 @@ class MessageListEntry extends Component {
 
     //this method is in charge of the delete button
     const deleteButton = (
-      <Button basic color={'black'} onClick={() => {
+      <button basic color={'black'} onClick={() => {
           deleteMessages(message.id)
       }}>              
-        <Icon name="remove" />
-      </Button>
+      </button>
     )
     
 
     return (
-      <Card.Group>
-        <Card style={{backgroundColor: "#FFFBBB"}}>
-          <Card.Content>
+      <div class="card">
+        <div class="card" style={{backgroundColor: "#FFFBBB"}}>
+          <div>
             <div style={style}>
-              <Icon name="pin" size="large" color="teal" />
             </div>
             <br/>
-            <Card.Header> {message.user.split('@')[0]} </Card.Header>
-            <Card.Meta>
+            <h3> {message.user.split('@')[0]} </h3>
+            <span>
               Date: {message.createdAt.split('T')[0]}
               {' '}
               Time: {Math.abs(Number(message.createdAt.split('T')[1].split('Z')[0].split('.')[0].split(':')[0]) - 7)}:{message.createdAt.split('T')[1].split('Z')[0].split('.')[0].split(':')[1]}:{message.createdAt.split('T')[1].split('Z')[0].split('.')[0].split(':')[2]}
-            </Card.Meta>
-            <Card.Description>
+            </span>
+            <span>
               {message.messageText}
-            </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
+            </span>
+          <span>
+          <span>
           <div className='ui two buttons'>
-            <Popup trigger={LikeView} basic>
-              <Popup.Content>
+            <span trigger={LikeView} basic>
+              <div>
                 {message.like.length > 1 ? message.like.map(user => {
                   return user !== ' ' ? <p>{user.split('@')[0]}</p> : null;
                 }):'no likes yet'}
-              </Popup.Content>
-            </Popup>
+              </div>
+            </span>
             {
               message.user === localStorage.getItem('name') ? deleteButton : null
             }
           </div>
-          </Card.Content>
-        </Card>
-      </Card.Group>
+          </span>
+        </span>
+      </div>
+      </div>
+      </div>
     ) 
   }
 }

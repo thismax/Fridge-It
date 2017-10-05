@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, Container, Menu } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Router, Route, Link, Redirect } from 'react-router-dom';
@@ -14,35 +13,35 @@ const FixedMenu = ({ history }) => (
   <Router history={history}>
     <div>
       <div>
-        <Menu fixed='top' size='large' id='navbar'>
-          <Container>
+        <div className="nav navbar">
+          <div class="container">
           <style>{
             `#navbar {
               background-color: #2185d0;
             }
           `}</style>
-            <Menu.Item>
+            <div>
               <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>
-            </Menu.Item>
-            <Menu.Item>
+            </div>
+            <div>
               <Link to="/">
-                <Button content={'Fridge-It'} color={'blue'} size={'massive'}/>
+                <button content={'Fridge-It'} color={'blue'} size={'massive'}/>
               </Link>
-            </Menu.Item>
-            <Menu.Menu position='right'>
-              <Menu.Item>
+            </div>
+            <div position='right'>
+              <div>
                 <Link to="/login">
-                  <Button content={'Login'} color={'blue'} size={'large'}/>
+                  <button content={'Login'} color={'blue'} size={'large'}/>
                 </Link>
-              </Menu.Item>
-              <Menu.Item>
+              </div>
+              <div>
                 <Link to="/signup">
-                  <Button content={"Signup"} color={'blue'} size={'large'}/>
+                  <button content={"Signup"} color={'blue'} size={'large'}/>
                 </Link>
-              </Menu.Item>
-            </Menu.Menu>
-          </Container>
-        </Menu>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <Route exact path="/" render={() => (<LandingPage />)} />

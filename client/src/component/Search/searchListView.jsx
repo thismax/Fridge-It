@@ -43,11 +43,11 @@ class SearchListView extends Component {
       return (
         <div>
           <h2 className='ui dividing header'>Recommended Recipes</h2>
-          <Card.Group itemsPerRow={3}>
+          <div className="row">
             {top3.map(recipe => {
               return <SearchListEntry {...actions} key={recipe.id} recipe={recipe} />
             })}
-          </Card.Group>
+          </div>
         </div>
       );
     }

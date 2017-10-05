@@ -1,19 +1,17 @@
 import React from 'react';
-import { Table, Icon, Card } from 'semantic-ui-react';
+import { Table, icon, Card } from 'semantic-ui-react';
 
 
 //fill rows with items and buttons to edit
 const Item = (props) => {
   return (
-    <Table.Row>
-      <Table.Cell textAlign="center">{props.quantity}</Table.Cell>
-      <Table.Cell textAlign="left">{props.name}</Table.Cell>
-      <Table.Cell textAlign="left">{props.date}</Table.Cell>
-      <Table.Cell textAlign="left">{props.expiry}</Table.Cell>
-      <Table.Cell textAlign="left">{props.user}</Table.Cell>
-      <Table.Cell>
-          <Icon 
-            size="small"
+    <tr>
+      <td textAlign="center">{props.quantity}</td>
+      <td textAlign="left">{props.name}</td>
+      <td textAlign="left">{props.date}</td>
+      <td textAlign="left">{props.user}</td>
+      <td>
+          <icon 
             onClick={(e) => {
               e.preventDefault();
               props.updateItem({
@@ -21,13 +19,10 @@ const Item = (props) => {
               quantity: props.quantity + 1,
               type: props.type
             }, props.id)}}
-            name="plus"
-          ></Icon>
-        </Table.Cell>
-        <Table.Cell>
-          <Icon 
-            name="minus"
-            size="small"
+          ></icon>
+        </td>
+        <td>
+          <icon 
             onClick={(e) => {
               e.preventDefault();
               props.updateItem({
@@ -35,18 +30,16 @@ const Item = (props) => {
               quantity: props.quantity - 1,
               type: props.type
             }, props.id)}}
-          ></Icon>
-        </Table.Cell>
-        <Table.Cell>
-          <Icon 
-            name="remove"
-            size="small"
+          ></icon>
+        </td>
+        <td>
+          <icon 
             onClick={(e)=> {
               e.preventDefault();
               props.deleteItem(props.id)}}
-          ></Icon>
-        </Table.Cell>
-    </Table.Row>
+          ></icon>
+        </td>
+    </tr>
   )
 }
 

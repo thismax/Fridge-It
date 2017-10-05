@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Router, Route, Link, Redirect } from 'react-router-dom';
-import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react';
 
 import HomeView from './Home/homeView.jsx';
 import Login from './Authorization/login.jsx';

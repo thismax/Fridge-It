@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Popup, Button, Input, Form } from 'semantic-ui-react';
+import { Popup, Menu} from 'semantic-ui-react';
 
 import ItemListView from './itemListView.jsx';
 import ItemAddition from './itemAddition.jsx';
@@ -71,41 +71,39 @@ class Fridge extends Component {
       }
     ]; 
 
-    //form switches fridge views
-    //render each item list by category
-    //create popup to show list
+    // form switches fridge views
+    // render each item list by category
+    // create popup to show list
     return (
       <div>
         <div >
           <h2 >{fridge.name && fridge.name.split('@')[0]}'s Fridge</h2>
         </div>
         <div>
-          <Form>
-            <Form.Group inline>
-              <Form.Input 
-                id='inputFid'
-                placeholder='Fridge Name'
+
+          <form>
+              <input
+                placeholder='Fridge ID' id="inputFid"
               />
-              <Form.Button content={'Switch fridge'}
+              <button className="btn btn-success" 
                 onClick={(e) => {
                   e.preventDefault();
                   fridgeActions.getFridge(document.getElementById('inputFid').value);
                   localStorage.setItem('visitorId', document.getElementById('inputFid').value);
                   location.reload();
                   document.getElementById('inputFid').value = '';
-                }}
-              />
-            </Form.Group>
-            <Form.Group inline>
-              <Form.Input 
+                }}>Switch Fridge</button>
+            </form>
+            <form>
+              <input 
                 id='phone'
                 placeholder='Phone Number'
               />
-              <Form.Input
+              <input
                 id='time'
                 placeholder='HH:MM'
               />
-              <Form.Button content={'Add phone'}
+              <button
                 onClick={(e) => {
                   console.log(fridge.id)
                   e.preventDefault();
@@ -114,26 +112,19 @@ class Fridge extends Component {
                   location.reload();
                   document.getElementById('phone').value = '';
                 }}
-              />
-            </Form.Group>
-          </Form>
+              >Add phone</button>
+            </form>
+
           <ItemAddition />
         </div>
         <div className={styles.container}>
           {types.map(type => {
-              let filteredItems = this.filterItems(type.name);
-                return (
-                    <Popup
-                      trigger={<div className={styles[type.name]}>
-                        <div className={styles.text}>{type.display}</div>
-                        </div>}
-                      flowing
-                      hoverable
-                      position={type.position}
-                    >
-                      <ItemListView actions={itemActions} type={type} items={filteredItems}/> 
-                    </Popup>
-                )
+            let filteredItems = this.filterItems(type.name);
+              return (
+                <div className={styles[type.name]}>
+                  <div className={styles.text}>{type.display}</div>
+                </div>
+              )
           })}
         </div>
         <ShareWidget shareUrl={'fridgeit.io\/' + (fridge.name && fridge.name.split('@')[0])} title="Hey! I'm using Fridge-It and it's awesome. Check out my fridge, yo."/>

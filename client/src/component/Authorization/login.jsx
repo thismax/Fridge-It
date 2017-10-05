@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import { button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 
 import * as authActions from '../../actions/authActions.js'
 
@@ -30,25 +30,20 @@ class Login extends Component {
             background-color: #e6e6ff;
           }
         `}</style>
-        <Grid
-          textAlign='center'
-          style={{ height: '100%' }}
-          verticalAlign='middle'>
+        <div className="row"
+          style={{ height: '100%' }}>
           
-          <Grid.Column style={{ maxWidth: 500 }}>
-            <Header as='h2' color='teal' textAlign='center'>
+          <div className="col col-sm-3" style={{ maxWidth: 500 }}>
+            <h2 color='teal' textAlign='center'>
               {' '}Log into your account
-            </Header>
-            <Form size='large'>
-              <Segment stacked>
-                <Form.Input
+            </h2>
+            <form>
+              <div>
+                <input
                   id="inputNM"
-                  fluid
-                  icon='user'
-                  iconPosition='left'
                   placeholder='E-mail address'
                 />
-                <Form.Input
+                <input
                   id="inputPW"
                   fluid
                   icon='lock'
@@ -56,21 +51,21 @@ class Login extends Component {
                   placeholder='Password'
                   type='password'
                 />
-                <Button color='teal' fluid size='large'
+                <button color='teal' fluid size='large'
                   onClick={(e) => {
                     e.preventDefault();
                     this.emailSignin();
-                  }}>Login</Button>
-              </Segment>
+                  }}>Login</button>
+              </div>
               
-                <Button color='facebook' fluid size='large'
-                onClick={() => this.props.actions.googleLogin()}>Log In with Google</Button>
-            </Form>
-            <Message>
+                <button color='facebook' fluid size='large'
+                onClick={() => this.props.actions.googleLogin()}>Log In with Google</button>
+            </form>
+            <p>
               Don't have an account yet? <a href='/signup'> Sign Up</a>
-            </Message>
-          </Grid.Column>
-        </Grid>
+            </p>
+          </div>
+        </div>
       </div>
     )
   }

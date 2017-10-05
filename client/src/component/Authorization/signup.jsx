@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Button, form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 import * as authActions from '../../actions/authActions.js';
 
@@ -30,25 +30,25 @@ class Signup extends Component {
             background-color: #e6e6ff;
           }
         `}</style>
-        <Grid
+        <div className="row"
           textAlign='center'
           style={{ height: '100%' }}
           verticalAlign='middle'
         >
-          <Grid.Column style={{ maxWidth: 500 }}>
-            <Header as='h2' color='teal' textAlign='center'>
+          <div className="col col-sm-3" style={{ maxWidth: 500 }}>
+            <h2 color='teal' textAlign='center'>
               {' '}Sign Up
-            </Header>
-            <Form size='large'>
-              <Segment stacked>
-                <Form.Input
+            </h2>
+            <form size='large'>
+              <div>
+                <input
                   id="inputSignupEmail"
                   fluid
                   icon='user'
                   iconPosition='left'
                   placeholder='E-mail address'
                 />
-                <Form.Input
+                <input
                   id="inputSignupPw"
                   fluid
                   icon='lock'
@@ -56,21 +56,21 @@ class Signup extends Component {
                   placeholder='Password'
                   type='password'
                 />
-                <Button color='teal' fluid size='large'
+                <button color='teal' fluid size='large'
                   onClick={(e) => {
                     e.preventDefault();
                     this.emailSignUp();
-                  }}>Sign Up</Button>
-              </Segment>
+                  }}>Sign Up</button>
+              </div>
 
-                <Button color='facebook' fluid size='large'
-                onClick={() => this.props.actions.googleLogin()}>Sign Up with Google</Button>
-            </Form>
-            <Message>
+                <button color='facebook' fluid size='large'
+                onClick={() => this.props.actions.googleLogin()}>Sign Up with Google</button>
+            </form>
+            <p>
               Already have an account? <a href='/login'> Log In</a>
-            </Message>
-          </Grid.Column>
-        </Grid>
+            </p>
+          </div>
+        </div>
       </div>
     )
   }

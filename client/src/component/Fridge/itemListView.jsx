@@ -1,30 +1,29 @@
 import React from 'react';
 import Item from './itemListEntry.jsx';
-import { Table } from 'semantic-ui-react';
+import { table } from 'semantic-ui-react';
 
 
 //render item list as popup table
 const ItemList = (props) => {
   if (props.items.length) {
     return (
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>qty</Table.HeaderCell>
-            <Table.HeaderCell>name</Table.HeaderCell>
-            <Table.HeaderCell>date added</Table.HeaderCell>
-            <Table.HeaderCell>expiration date</Table.HeaderCell>
-            <Table.HeaderCell>user</Table.HeaderCell>
-            <Table.HeaderCell colSpan='3'>edit</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
+      <table celled>
+        <th>
+          <tdtr>
+            <td>qty</td>
+            <td>name</td>
+            <td>date added</td>
+            <td>user</td>
+            <td colSpan='3'>edit</td>
+          </tdtr>
+        </th>
 
-        <Table.Body>
+        <tbody>
           {props.items.map(item => (
             <Item {...props.actions} name={item.name} expiry={item.expiry} quantity={item.quantity} type={item.type} id={item.id} key={item.id} date={item.createdAt.split('T')[0]} user={item.user.split('@')[0]}/>
           ))}
-        </Table.Body>
-      </Table> 
+        </tbody>
+      </table> 
     )
   } else {
     return (

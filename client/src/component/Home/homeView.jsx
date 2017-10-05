@@ -3,7 +3,6 @@ import { Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
-import {Button, Menu, Container, Image } from 'semantic-ui-react';
 
 import Search from '../Search/searchView.jsx';
 import Home from '../Home/home.jsx';
@@ -32,31 +31,31 @@ class HomeView extends Component {
         `}</style>
         <Router history={this.props.history}>
           <div>
-            <Menu fixed='top' size='large' id='bar' stackable menu>
-              <Container>
-                <Menu.Item>
+            <div className="navbar">
+              <div className="container">
+                <div>
                   <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>
-                </Menu.Item>
-                <Menu.Item>
+                </div>
+                <div>
                   <Link to="/home">
-                    <Button color={'blue'} content={'Home'} size={'huge'}/>
+                    <button color={'blue'} content={'Home'} size={'huge'}/>
                   </Link>
-                </Menu.Item>
-                <Menu.Item>
+                </div>
+                <div>
                   <Link to="/search">
-                    <Button color={'blue'} content={'Recipe'} size={'huge'}/>
+                    <button color={'blue'} content={'Recipe'} size={'huge'}/>
                   </Link>
-                </Menu.Item>
-                <Menu.Item position={'right'} >
-                  <Button content={localStorage.getItem('name')} color={'blue'} size={'huge'} />
-                  <Button as='a' color={'blue'} content={'Logout'} size={'huge'}
+                </div>
+                <div>
+                  <button content={localStorage.getItem('name')} color={'blue'} size={'huge'} />
+                  <button as='a' color={'blue'} content={'Logout'} size={'huge'}
                   onClick={(e) => {
                     e.preventDefault();
                     this.props.actions.logoutUser();
                     }} />
-                </Menu.Item>
-              </Container>
-            </Menu>
+                </div>
+              </div>
+            </div>
             <Route exact path="/home" render={() => {return <Home />}}/>
             <Route path="/search" render={() => {return <Search />}}/>
           </div>

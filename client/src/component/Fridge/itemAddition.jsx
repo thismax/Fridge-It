@@ -76,22 +76,21 @@ class itemAddition extends Component {
     ]; 
 
     return (
-      <Form 
+      <form 
         onSubmit={() => {
           handleSubmit();
         }}
       >
-        <Form.Group inline>
-          <Form.Input 
+          <input 
             placeholder='Type name here'
             id="inputItm"
           />
-          <Form.Input 
+          <input 
             width={2}
             type='number'
             id="inputQty"
           />
-          <Form.Select 
+          <select 
             placeholder='Browse categories' 
             options={options} 
             id="inputType"
@@ -99,19 +98,8 @@ class itemAddition extends Component {
               type = value;
             }}
           />
-          <Form.Select
-            placeholder={moment()}
-            id="expiry"
-            control={DatePicker}
-            selected={this.state.startDate}
-            onChange={this.handleChange}
-            showTimeSelect
-          />
-          <Form.Button 
-            content='Go'
-          />
-        </Form.Group>
-      </Form>
+          <input type="submit"/>
+      </form>
     )
   }
 };

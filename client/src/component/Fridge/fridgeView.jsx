@@ -76,10 +76,9 @@ class Fridge extends Component {
     //create popup to show list
     return (
       <div>
-        <h2 className='ui dividing header'>
-          {fridge.name && fridge.name.split('@')[0]}'s Fridge 
-          <ShareWidget shareUrl={'fridgeit.io\/' + (fridge.name && fridge.name.split('@')[0])} title="Hey! I'm using Fridge-It and it's awesome. Check out my fridge, yo."/>
-          </h2>
+        <div >
+          <h2 >{fridge.name && fridge.name.split('@')[0]}'s Fridge</h2>
+        </div>
         <div>
           <Form>
             <Form.Group inline>
@@ -137,6 +136,7 @@ class Fridge extends Component {
                 )
           })}
         </div>
+        <ShareWidget shareUrl={'fridgeit.io\/' + (fridge.name && fridge.name.split('@')[0])} title="Hey! I'm using Fridge-It and it's awesome. Check out my fridge, yo."/>
       </div>
     )
   }

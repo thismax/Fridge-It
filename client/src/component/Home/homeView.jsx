@@ -32,7 +32,7 @@ class HomeView extends Component {
         `}</style>
         <Router history={this.props.history}>
           <div>
-            <Menu fixed='top' size='large' id='bar'>
+            <Menu fixed='top' size='large' id='bar' stackable menu>
               <Container>
                 <Menu.Item>
                   <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>

@@ -22,7 +22,7 @@ class Home extends Component {
 
     if (fetched || posted) {
       return (
-      <Grid divided="vertically">
+      <Grid divided="vertically" stackable>
         <Grid.Row columns={2} centered>
           <Grid.Column width={11}> 
             <Grid.Row>

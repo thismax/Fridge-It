@@ -6,7 +6,8 @@ module.exports = {
   addFridge: (req, res) => {
     Fridge.create({
       users: req.body.users,
-      name: req.body.name
+      name: req.body.name,
+      phone: req.body.phone,
     })
     .then((data) => {
       res.send(data);
@@ -19,6 +20,20 @@ module.exports = {
   getFridge: (req, res) => {
     Fridge.findAll({
       where: {name: req.params.name}
+    })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send(err);
+    })
+  },
+
+  updatePhone: (req, res) => {
+    Fridge.update({
+      phone: req.body.phone,
+    }, {
+      where: {id: req.params.fridgeId}
     })
     .then((data) => {
       res.send(data);

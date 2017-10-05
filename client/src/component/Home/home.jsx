@@ -55,6 +55,7 @@ class Home extends Component {
                 const fridgeObj = {
                   users: userArray,
                   name: username,
+                  phone: '',
                 }
                 actions.addFridge(fridgeObj);
               }}

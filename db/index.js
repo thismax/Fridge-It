@@ -15,41 +15,60 @@ const Fridge = sequelize.define('fridge', {
 const FridgeItems = sequelize.define('fridgeItem', {
   name: {
     type: Sequelize.STRING,
-    allowNull: false,
+    model: 'fridge',
+    key: 'id',
   },
   quantity: {
     type: Sequelize.INTEGER,
-    allowNull: false,
+    model: 'fridge',
+    key: 'id',
   },
   type: {
     type: Sequelize.STRING,
-    allowNull: false,
+    model: 'fridge',
+    key: 'id',
   },
   user: {
     type: Sequelize.STRING,
-    allowNull: false,
+    model: 'fridge',
+    key: 'id',
   },
+  expiry: {
+    type: Sequelize.STRING,
+    model: 'fridge',
+    key: 'id',
+  },
+  fridgeId:{
+    type: Sequelize.INTEGER,
+    model: 'fridge',
+    key: 'id',
+  }
 });
 
 const MessageInfo = sequelize.define('messageInfo', {
   messageText: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    model: 'fridge',
+    key: 'id',
   },
   like: {
-    type: Sequelize.ARRAY({type: Sequelize.STRING})
+    type: Sequelize.ARRAY({type: Sequelize.STRING}),
+    model: 'fridge',
+    key: 'id',
   },
   user: {
     type: Sequelize.STRING,
-    allowNull: false,
+    model: 'fridge',
+    key: 'id',
   }
 });
 
 // Foreign Keys
-FridgeItems.belongsTo(Fridge, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
-Fridge.hasMany(FridgeItems, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
+FridgeItems.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
+Fridge.hasMany(FridgeItems, {allowNull: true, onDelete: 'CASCADE'});
 
-MessageInfo.belongsTo(Fridge, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
-Fridge.hasMany(MessageInfo, {foreignKey: 'fridgeId', allowNull: true, onDelete: 'CASCADE'});
+MessageInfo.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
+Fridge.hasMany(MessageInfo, {allowNull: true, onDelete: 'CASCADE'});
 
 module.exports.fridge = Fridge;
 module.exports.fridgeItems = FridgeItems;

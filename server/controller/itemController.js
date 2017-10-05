@@ -21,7 +21,8 @@ module.exports = {
       quantity: req.body.quantity,
       type: req.body.type,
       fridgeId: req.body.fridgeId,
-      user: req.body.user
+      user: req.body.user,
+      expiry: req.body.expiry,
     })
     .then((data) => {
       res.send(data)

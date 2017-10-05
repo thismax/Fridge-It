@@ -7,7 +7,6 @@ import moment from 'moment';
 import * as itemActions from '../../actions/itemActions.js';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-
 class itemAddition extends Component {
   constructor(props) {
     super(props);
@@ -41,8 +40,8 @@ class itemAddition extends Component {
       itemActions.addItem(item, fridge.id);
       name.value = '';
       qty.value = '';
-      type = '';
     }
+
     const options = [
       {
         key: 1, 

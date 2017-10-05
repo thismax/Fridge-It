@@ -6,8 +6,6 @@ import { Popup, Button, Input, Form } from 'semantic-ui-react';
 import ItemListView from './itemListView.jsx';
 import ItemAddition from './itemAddition.jsx';
 
-import styles from '../../../public/fridge.css'
-
 import * as fridgeActions from '../../actions/fridgeActions.js';
 import * as itemActions from '../../actions/itemActions.js';
 

@@ -31,7 +31,7 @@ Follow steps on https://spoonacular.com/ in order to get an api key
 ### Environmental Variables
 You will need 2 variables in your .env:
 * DB_URL: to link to your postgress database (elephantsql)
-* API_KEY: to hold your Spoonacular api key
+* API_FOOD_KEY: to hold your Spoonacular api key
 
 You will need 4 variables in your firebase.json:
 * FIREBASE_API_KEY: to hold your firebase api key

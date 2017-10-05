@@ -79,7 +79,10 @@ class Fridge extends Component {
           <h2 >{fridge.name && fridge.name.split('@')[0]}'s Fridge</h2>
         </div>
         <div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> remove semantic UI styling
           <form>
               <input
                 placeholder='Fridge ID' id="inputFid"
@@ -91,6 +94,7 @@ class Fridge extends Component {
                   localStorage.setItem('visitorId', document.getElementById('inputFid').value);
                   location.reload();
                   document.getElementById('inputFid').value = '';
+<<<<<<< HEAD
                 }}>Switch Fridge</button>
             </form>
             <form>
@@ -114,6 +118,11 @@ class Fridge extends Component {
               >Add phone</button>
             </form>
 
+=======
+                }}
+              >Switch Fridge</button>
+            </form>
+>>>>>>> remove semantic UI styling
           <ItemAddition />
         </div>
         <div className={styles.container}>

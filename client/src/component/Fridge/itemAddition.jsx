@@ -11,8 +11,18 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 class itemAddition extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      startDate: moment(),
+    }
+    this.handleChange = this.handleChange.bind(this);
   }
   
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+
   //form to input fridge items
   render() {
     const { itemActions, fridge } = this.props;
@@ -21,11 +31,11 @@ class itemAddition extends Component {
     
     const handleSubmit = () => {
       const item = {};
-      
       let name = document.getElementById('inputItm');
       item.name = name.value;
       let qty = document.getElementById('inputQty');
       item.quantity = qty.value;
+      item.expiry = document.getElementById('expiry').value;
       item.type = type;
       item.user = username;
       itemActions.addItem(item, fridge.id);
@@ -66,8 +76,6 @@ class itemAddition extends Component {
       }
     ]; 
 
-    const item = {};
-
     return (
       <Form 
         onSubmit={() => {
@@ -92,9 +100,12 @@ class itemAddition extends Component {
               type = value;
             }}
           />
-          <Form.Field
-            placeholder='date'
+          <Form.Select
+            placeholder={moment()}
+            id="expiry"
             control={DatePicker}
+            selected={this.state.startDate}
+            onChange={this.handleChange}
           />
           <Form.Button 
             content='Go'

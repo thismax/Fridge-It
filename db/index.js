@@ -63,12 +63,15 @@ const MessageInfo = sequelize.define('messageInfo', {
   }
 });
 
-// Foreign Keys
-FridgeItems.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
-Fridge.hasMany(FridgeItems, {allowNull: true, onDelete: 'CASCADE'});
 
-MessageInfo.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
-Fridge.hasMany(MessageInfo, {allowNull: true, onDelete: 'CASCADE'});
+// DATABASE RESTRUCTURED!  Leave these commented out for now.
+
+// // Foreign Keys
+// FridgeItems.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
+// Fridge.hasMany(FridgeItems, {allowNull: true, onDelete: 'CASCADE'});
+
+// MessageInfo.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
+// Fridge.hasMany(MessageInfo, {allowNull: true, onDelete: 'CASCADE'});
 
 module.exports.fridge = Fridge;
 module.exports.fridgeItems = FridgeItems;

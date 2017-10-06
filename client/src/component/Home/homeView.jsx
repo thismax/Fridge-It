@@ -17,36 +17,44 @@ class HomeView extends Component {
     if(localStorage.getItem('userid')) {
       return (
         <div>
-        <Router history={this.props.history}>
-          <div>
-              <div className="container">
-                <div>
-                  <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>
-                </div>
-                <div>
-                  <Link to="/home">
-                    <button color={'blue'} content={'Home'} size={'huge'}/>
-                  </Link>
-                </div>
-                <div>
-                  <Link to="/search">
-                    <button color={'blue'} content={'Recipe'} size={'huge'}/>
-                  </Link>
-                </div>
-                <div>
-                  <button content={localStorage.getItem('name')} color={'blue'} size={'huge'} />
-                  <button as='a' color={'blue'} content={'Logout'} size={'huge'}
-                  onClick={(e) => {
+
+          <Router history={this.props.history}>
+              <div>
+                <nav className="navbar navbar-expand-lg navbar-light">   
+                  <a className="navbar-brand" href="#"><img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"  width="30" height="30" alt="" /></a>
+                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                  </button>
+                  <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                      <li className="nav-item">
+                        <Link to="/" className="nav-link">Fridge-It</Link>
+                      </li>
+                      <li className="nav-item">
+                      <Link to="/home" className="nav-link">Home</Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/search" className="nav-link">Recipe</Link>
+                      </li>
+                      <li>
+                      {localStorage.getItem('name')}
+                        </li>
+                        <li>
+                        <button className="btn btn-success" onClick={(e) => {
                     e.preventDefault();
                     this.props.actions.logoutUser();
-                    }} />
-                </div>
-              </div>
-            <Route exact path="/home" render={() => {return <Home />}}/>
-            <Route path="/search" render={() => {return <Search />}}/>
-            </div>
-        </Router>
-        </div>
+                    }}>Log Out</button>
+                          </li>
+                    </ul>
+                  </div>
+                </nav>
+
+                <Route exact path="/home" render={() => {return <Home/>}} />
+                <Route path="/search" render={() => {return <Search/>}} />
+
+                </div> 
+              </Router>
+       </div>
       );
     } else {
       return (

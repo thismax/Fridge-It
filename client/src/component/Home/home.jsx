@@ -21,10 +21,11 @@ class Home extends Component {
 
     if (fetched || posted) {
       return (
-      <div divided="vertically">
+      <div>
         <div className="row">
           <div className="col col-sm-3"> 
             <div className="row">
+              hello
               <Fridge />
             </div>
             <br/>

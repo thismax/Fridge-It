@@ -18,6 +18,8 @@ class Login extends Component {
     
   render() {
     return (
+      <div>
+        <div className="purple-background"></div>
       <div className='container'>
         <div className="row">
           <div className="col sign-in-box">
@@ -57,6 +59,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }

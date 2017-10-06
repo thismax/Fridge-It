@@ -199,6 +199,11 @@ hr {
   padding-top: 200px;
 }
 
+.sign-in-box h2 {
+  color: #28a746;
+  background-color: #e6e6ff;
+}
+
 .login-button {
   margin-top: 20px;
 }
@@ -233,4 +238,15 @@ hr {
 }
 .right-addon input { 
   padding-right: 30px; 
+}
+
+.login-container {
+  background-color: #e6e6ff;
+}
+
+.purple-background {
+  position: fixed;
+  width: 100%;
+  background-color: #e6e6ff;
+  height: 100%;
 }

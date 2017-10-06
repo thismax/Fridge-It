@@ -120,31 +120,43 @@ module.exports = {
 
     module.exports.checkExipredItems()
     .then((results) => {
-      let messages
-      _.each(results, (item, phone))
-      res.send('yoyoyo');
+      let itemsToSend = [];
+      let user = '';
+      let message = '';
+
+      _.each(results, (items, phone) => {
+
+        _.each(items, (item) => {
+          itemsToSend.push(item.name);
+          if (user === '') user = item.user;
+        })
+
+        message = `Hey there ${user}.  The following items in your Fridge-It are about to expire: \n${itemsToSend.join('\n')}`;
+        
+        if (itemsToSend.length > 0) {
+          
+          client.messages.create({ 
+            to: phone, 
+            from: "+14243466219", 
+            body: message, 
+          }, function(err, message) { 
+            if (err) {
+              console.log('====================================')
+              console.log('error => ', err);
+              console.log('====================================')
+            }
+          })
+
+        }
+
+      })
+
+      res.send('messages sent');
+
     })
     .catch((err) => {
-      console.log('====================================')
-      console.log('results => ', err)
-      console.log('====================================')
-      res.status(500).send({});
+      res.status(500).send('did not work', err);
     })
-
-  
-    // client.messages.create({ 
-    //   to: req.body.phone, 
-    //   from: "+14243466219", 
-    //   body: "We spiderman now.", 
-    // }, function(err, message) { 
-    //   if (err) {
-    //     console.log('====================================')
-    //     console.log('error => ', err);
-    //     console.log('====================================')
-    //   }
-    //   let startTime = new Date(Date.now() + 5000);
-    //   let endTime = new Date(startTime.getTime() + 5000);
-    // })
   
   },
 

@@ -40,8 +40,8 @@ class itemAddition extends Component {
       itemActions.addItem(item, fridge.id);
       name.value = '';
       qty.value = '';
+      type = '';
     }
-
     const options = [
       {
         key: 1, 
@@ -76,21 +76,22 @@ class itemAddition extends Component {
     ]; 
 
     return (
-      <form 
+      <Form 
         onSubmit={() => {
           handleSubmit();
         }}
       >
-          <input 
+        <Form.Group inline>
+          <Form.Input 
             placeholder='Type name here'
             id="inputItm"
           />
-          <input 
+          <Form.Input 
             width={2}
             type='number'
             id="inputQty"
           />
-          <select 
+          <Form.Select 
             placeholder='Browse categories' 
             options={options} 
             id="inputType"
@@ -98,8 +99,18 @@ class itemAddition extends Component {
               type = value;
             }}
           />
-          <input type="submit"/>
-      </form>
+          <Form.Select
+            placeholder={moment()}
+            id="expiry"
+            control={DatePicker}
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+          />
+          <Form.Button 
+            content='Go'
+          />
+        </Form.Group>
+      </Form>
     )
   }
 };

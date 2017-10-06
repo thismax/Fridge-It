@@ -21,6 +21,7 @@ router.get('/items/:fridgeId', item.getAllItems);
 router.post('/items', item.addItem);
 router.patch('/items/:id', item.updateItem);
 router.delete('/items/:id', item.deleteItem);
+router.get('/testMessages', item.smsMessage)
 
 // Search Routes
 router.route('/search')

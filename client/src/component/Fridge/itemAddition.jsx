@@ -105,6 +105,7 @@ class itemAddition extends Component {
             control={DatePicker}
             selected={this.state.startDate}
             onChange={this.handleChange}
+            showTimeSelect
           />
           <Form.Button 
             content='Go'

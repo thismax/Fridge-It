@@ -117,7 +117,7 @@
   color: rgb(255, 255, 255);
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:visited {
   background-color: #1f78bb;
   color: rgb(255, 255, 255)!important;
   border-radius: 4px;
@@ -129,15 +129,67 @@
 }
 
 .carousel-caption {
-  padding-bottom: 8%
+  padding-bottom: 20%;
+  color: white;
 }
 
-.carousel-caption h1 {
-  font-size: 5em;
-  margin-bottom: 2%;
+.main-landing-image {
+  margin: 0 auto;
+  width: 80%!important;
 }
 
-.carousel-caption h2 {
-  font-size: 3.5em;
-  margin-bottom: 2%;
+  .carousel-caption h1 {
+    font-size: 4em;
+  }
+  .carousel-caption h2 {
+    font-size: 3em;
+  }
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    padding-bottom: 0px;
+    color: white;
+  }
+  .carousel-caption h1 {
+    font-size: 3em;
+    display: none;
+  }
+  .carousel-caption h2 {
+    font-size: 2em;
+  }
+  .mini-fridge-pic {
+    display: none;
+  }
+  .col-8 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  } 
+}
+
+.main-content {
+  margin-top: 30px!important;
+}
+
+.padding-30 {
+  margin-top: 30px!important;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer{
+  background-color: #1b1c1d;
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 20px;
+}
+
+.footer > h3, .footer h6 {
+  color: white;
 }

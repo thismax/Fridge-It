@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'compile' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.1
@@ -80,6 +81,8 @@
 12 verbose exit [ 1, true ]
 >>>>>>> add styling to landing page main image and title
 =======
+=======
+>>>>>>> resolve merge conflict
 1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.1
@@ -118,6 +121,7 @@
 21 error This is not a bug in npm.
 21 error Tell the package author to fix their package.json file. JSON.parse
 22 verbose exit [ 1, true ]
+<<<<<<< HEAD
 >>>>>>> resolve merge conflict
 =======
 7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "comile"
@@ -131,3 +135,5 @@
 11 error     <https://github.com/npm/npm/issues>
 12 verbose exit [ 1, true ]
 >>>>>>> remove semantic UI styling
+=======
+>>>>>>> resolve merge conflict

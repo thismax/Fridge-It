@@ -32,3 +32,14 @@ export function addFridge(fridge) {
   };
 };
 
+export function updateFridgePhone(fridgeId, phone) {
+  return function(dispatch) {
+    axios.post(`/api/fridge/${fridgeId}`, { phone })
+      .then(({ data }) => {
+        dispatch({type: 'POST_PHONE_FULFILLED', payload: data})
+      })
+      .catch(err => {
+        dispatch({type: 'POST_PHONE_REJECTED', payload: err})
+      });
+  };
+};

@@ -83,7 +83,7 @@ class Fridge extends Component {
             <Form.Group inline>
               <Form.Input 
                 id='inputFid'
-                placeholder='Fridge ID'
+                placeholder='Fridge Name'
               />
               <Form.Button content={'Switch fridge'}
                 onClick={(e) => {
@@ -92,6 +92,22 @@ class Fridge extends Component {
                   localStorage.setItem('visitorId', document.getElementById('inputFid').value);
                   location.reload();
                   document.getElementById('inputFid').value = '';
+                }}
+              />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input 
+                id='phone'
+                placeholder='Phone Number'
+              />
+              <Form.Button content={'Add phone'}
+                onClick={(e) => {
+                  console.log(fridge.id)
+                  e.preventDefault();
+                  fridgeActions.updateFridgePhone(fridge.id, document.getElementById('phone').value);
+                  localStorage.setItem('visitorId', document.getElementById('inputFid').value);
+                  location.reload();
+                  document.getElementById('phone').value = '';
                 }}
               />
             </Form.Group>

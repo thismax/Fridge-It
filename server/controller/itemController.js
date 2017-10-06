@@ -99,12 +99,19 @@ module.exports = {
         Fridge.findAll({
           where: {
             id: fridgesToPilfer,
+            phone: {$ne: ''},
           },
           raw: true,
         })
         .then((data) => {
-          batchObject[data[0].phone] = batchObject[data[0].id];
-          delete batchObject[data[0].id];
+          if (data.length > 0) {
+            _.each(data, (fridge) => {
+              batchObject[fridge.phone] = batchObject[fridge.id]
+              delete batchObject[fridge.id]
+            });
+          }
+        })
+        .then(() => {
           resolve(batchObject);
         })
       })
@@ -120,11 +127,18 @@ module.exports = {
 
     module.exports.checkExipredItems()
     .then((results) => {
-      let itemsToSend = [];
-      let user = '';
-      let message = '';
+
+      if (Object.keys(results).length === 0 && results.constructor === Object) {
+        console.log('====================================')
+        console.log('Nothing to send!')
+        console.log('====================================')
+      }
 
       _.each(results, (items, phone) => {
+
+        let itemsToSend = [];
+        let user = '';
+        let message = '';
 
         _.each(items, (item) => {
           itemsToSend.push(item.name);
@@ -133,8 +147,8 @@ module.exports = {
 
         message = `Hey there ${user}.  The following items in your Fridge-It are about to expire: \n${itemsToSend.join('\n')}`;
         
-        if (itemsToSend.length > 0) {
-          
+        if (itemsToSend.length > 0  && phone.length > 10) {
+
           client.messages.create({ 
             to: phone, 
             from: "+14243466219", 
@@ -151,8 +165,9 @@ module.exports = {
 
       })
 
+    })
+    .then((results) => {
       res.send('messages sent');
-
     })
     .catch((err) => {
       res.status(500).send('did not work', err);

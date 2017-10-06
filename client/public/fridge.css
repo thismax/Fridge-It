@@ -193,3 +193,44 @@ hr {
 .footer > h3, .footer h6 {
   color: white;
 }
+
+.sign-in-box {
+  text-align: center;
+  padding-top: 200px;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.sign-up-box {
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* form input */
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #928e96;
+}
+
+.left-addon .fa  { 
+  left:  0px;
+}
+.right-addon .fa { 
+  right: 0px;
+}
+
+.left-addon input  { 
+  padding-left:  30px; 
+}
+.right-addon input { 
+  padding-right: 30px; 
+}

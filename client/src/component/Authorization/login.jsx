@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 
 import * as authActions from '../../actions/authActions.js'
 
@@ -14,53 +13,48 @@ class Login extends Component {
   emailSignin() {
     let user = document.getElementById('inputNM');
     let pw = document.getElementById('inputPW');
-     
     this.props.actions.emailLogin(user.value, pw.value);
   };
     
   render() {
     return (
-      <div className='login-form'>
-        <style>{`
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%;
-            padding-top: 8%;
-            background-color: #e6e6ff;
-          }
-        `}</style>
-        <div className="row"
-          style={{ height: '100%' }}>
-          
-          <div className="col col-sm-3" style={{ maxWidth: 500 }}>
-            <h2 color='teal' textAlign='center'>
+      <div className='container'>
+        <div className="row">
+          <div className="col sign-in-box">
+            <h2>
               {' '}Log into your account
             </h2>
             <form>
-              <div>
+              <div className="form-group">
+              <div className="inner-addon left-addon">
+              <i className="fa fa-user" aria-hidden="true"></i>
                 <input
-                  id="inputNM"
+                  className="form-control"
                   placeholder='E-mail address'
                 />
+              </div>
+              </div>
+              <div className="form-group">
+              <div className="inner-addon left-addon">
+              <i className="fa fa-lock" aria-hidden="true"></i>
                 <input
+                  className="form-control" 
                   id="inputPW"
                   placeholder='Password'
                   type='password'
                 />
-                <button color='teal' fluid size='large'
+              </div>
+                <button className="btn btn-success btn-lg btn-block login-button" 
                   onClick={(e) => {
                     e.preventDefault();
                     this.emailSignin();
                   }}>Login</button>
               </div>
-              
-                <button color='facebook' fluid size='large'
-                onClick={() => this.props.actions.googleLogin()}>Log In with Google</button>
+                <button className="btn btn-primary btn-lg btn-block" onClick={() => this.props.actions.googleLogin()}>Log In with Google</button>
             </form>
-            <p>
-              Don't have an account yet? <a href='/signup'> Sign Up</a>
-            </p>
+            <div className="card sign-up-box">
+              <span>Don't have an account yet?<a href='/signup'>Sign Up</a></span>
+            </div>
           </div>
         </div>
       </div>

@@ -38,8 +38,8 @@ class MessageListEntry extends Component {
     
 
     return (
-      <div class="card">
-        <div class="card" style={{backgroundColor: "#FFFBBB"}}>
+      <div className="card">
+        <div className="card" style={{backgroundColor: "#FFFBBB"}}>
           <div>
             <div style={style}>
             </div>

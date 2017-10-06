@@ -83,14 +83,11 @@ class LandingPage extends Component {
         <div className="row">
           <div className="col">
             <h3>About</h3>
-            <Link to="/"><h6>Site Map</h6></Link>
-            <Link to="/"><h6>Contact Us</h6></Link>
+
           </div>
           <div className="col">
           <h3>Services</h3>
-          <Link to="/"><h6>Banana Pre-Order</h6></Link>
-          <Link to="/"><h6>DNA FAQ</h6></Link>
-          <Link to="/"><h6>How to Access</h6></Link>
+
           </div>
         </div>
           </div>

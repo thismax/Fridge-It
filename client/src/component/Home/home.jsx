@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Form, div, Button } from 'semantic-ui-react';
 
 import Messages from '../Message/messagesListView.jsx';
 import Search from '../Search/searchListView.jsx';
@@ -22,18 +21,18 @@ class Home extends Component {
 
     if (fetched || posted) {
       return (
-      <div divided="vertically" stackable>
-        <div class="row" columns={2} centered>
-          <div class="col col-sm-3" width={11}> 
-            <div class="row">
+      <div divided="vertically">
+        <div className="row">
+          <div className="col col-sm-3"> 
+            <div className="row">
               <Fridge />
             </div>
             <br/>
-            <div class="row" textAlign={'center'}>
+            <div className="row">
               <Search />
             </div>
           </div>
-          <div class="col col-sm-3" width={5}>
+          <div className="col col-sm-3">
             <Messages />
           </div>
         </div>
@@ -43,9 +42,9 @@ class Home extends Component {
       let username = localStorage.getItem('name');
 
       return (
-        <div centered columns={2}>
-          <div class="col col-sm-3" width={4}>
-            <button content={'Create a Fridge'} color={'blue'}
+        <div>
+          <div className="col col-sm-3">
+            <button 
               onClick={(e) => {
                 e.preventDefault();
                 
@@ -60,9 +59,9 @@ class Home extends Component {
                 }
                 actions.addFridge(fridgeObj);
               }}
-            />
+            >Create a fridge</button>
           </div>
-          <div class="col col-sm-3" width={6}>
+          <div className="col col-sm-3">
             <form>
                 <input id="joinFridgeInput" placeholder="Enter Fridge Owner's Name" />
                 <button

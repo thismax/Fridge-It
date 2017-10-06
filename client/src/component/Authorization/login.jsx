@@ -31,6 +31,7 @@ class Login extends Component {
               <div className="inner-addon left-addon">
               <i className="fa fa-user" aria-hidden="true"></i>
                 <input
+                  id="inputNM"
                   className="form-control"
                   placeholder='E-mail address'
                 />

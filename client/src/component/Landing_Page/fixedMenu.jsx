@@ -12,7 +12,7 @@ import * as authActions from '../../actions/authActions.js';
 const FixedMenu = ({ history }) => (
   <Router history={history}>
     <div>
-
+     <div>
       <nav className="navbar navbar-expand-lg navbar-light">   
         <a className="navbar-brand" href="#"><img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"  width="30" height="30" alt="" /></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +33,11 @@ const FixedMenu = ({ history }) => (
         </div>
       </nav>
 
-      <div>
         <Route exact path="/" render={() => (<LandingPage />)} />
         <Route path="/login" render={() => (<Login />)} />
         <Route path="/signup" render={() => (<SignUp />)} />
-      </div>
-      
+
+      </div> 
     </div>
   </Router>
 )

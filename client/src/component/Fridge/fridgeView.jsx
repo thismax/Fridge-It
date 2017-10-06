@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Popup, Menu} from 'semantic-ui-react';
 
 import ItemListView from './itemListView.jsx';
 import ItemAddition from './itemAddition.jsx';

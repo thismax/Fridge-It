@@ -17,18 +17,6 @@ class HomeView extends Component {
     if(localStorage.getItem('userid')) {
       return (
         <div>
-        <style>{`
-          #bar {
-            background-color: #2185d0;
-          }
-          body > div,
-          body > div > div,
-          body > div > div > div.home-form {
-            padding-top: 3%;
-            padding-left: 5%;
-            padding-right: 5%;
-          }
-        `}</style>
         <Router history={this.props.history}>
           <div>
               <div className="container">
@@ -54,23 +42,15 @@ class HomeView extends Component {
                     }} />
                 </div>
               </div>
-            </div>
             <Route exact path="/home" render={() => {return <Home />}}/>
             <Route path="/search" render={() => {return <Search />}}/>
+            </div>
         </Router>
         </div>
       );
     } else {
       return (
         <div>
-        <style>{`
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%;
-            padding-top: 80px;
-          }
-        `}</style>
         <Redirect exact to={{ pathname: '/login'}} />
         </div>
       )

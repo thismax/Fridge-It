@@ -8,7 +8,7 @@ var config = {
     databaseURL: FB.databaseURL,
     projectId: FB.projectId,
     storageBucket: FB.storageBucket,
-    messagingSenderId: "614537900777"
+    messagingSenderId: FB.messagingSenderId
   };
   
 firebase.initializeApp(config);

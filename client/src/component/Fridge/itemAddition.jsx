@@ -76,29 +76,31 @@ class itemAddition extends Component {
     ]; 
 
     return (
-      <Form 
+      <form 
         onSubmit={() => {
           handleSubmit();
         }}
       >
-        <Form.Group inline>
-          <Form.Input 
+          <input 
             placeholder='Type name here'
             id="inputItm"
           />
-          <Form.Input 
+          <input 
             width={2}
             type='number'
             id="inputQty"
           />
-          <Form.Select 
-            placeholder='Browse categories' 
-            options={options} 
-            id="inputType"
-            onChange={(e, {value}) => {
-              type = value;
-            }}
-          />
+          <select name="categories" id="inputType" onChange={(e, {value}) => {type = value;}}>
+          <option value="" disabled selected>Select Category</option>
+              <option>{options[0].text} </option>
+              <option>{options[1].text} </option>
+              <option>{options[2].text} </option>
+              <option>{options[3].text} </option>
+              <option>{options[4].text} </option>
+              <option>{options[5].text} </option>
+            })}
+          </select>
+
           <Form.Select
             placeholder={moment()}
             id="expiry"
@@ -109,8 +111,7 @@ class itemAddition extends Component {
           <Form.Button 
             content='Go'
           />
-        </Form.Group>
-      </Form>
+      </form>
     )
   }
 };

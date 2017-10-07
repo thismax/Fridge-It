@@ -119,7 +119,7 @@ class itemAddition extends Component {
             selected={this.state.date}
             onChange={this.handleChange}
             />
-          <button className="btn btn-success">Go</button>
+          <button className="btn btn-default">Go</button>
       </form>
     )
   }

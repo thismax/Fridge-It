@@ -88,7 +88,7 @@ class Fridge extends Component {
                 placeholder='Fridge ID' id="inputFid"
                 className="form-control"
               />
-              <button className="btn btn-success" 
+              <button className="btn btn-default switch-fridge-button" 
                 onClick={(e) => {
                   e.preventDefault();
                   fridgeActions.getFridge(document.getElementById('inputFid').value);

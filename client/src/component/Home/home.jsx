@@ -21,7 +21,7 @@ class Home extends Component {
     if (fetched || posted) {
       return (
       <div>
-            <div className="fridge-container">
+            <div className="container">
               <div className="row">
               <div>
                 <Fridge />

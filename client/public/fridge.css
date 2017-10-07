@@ -1,7 +1,7 @@
 .fridge-container {
   position: relative;
   height: 700px;
-  width: 450px;
+  width: 100%; /* 450px */
   border: none;
   margin: 0 auto;
   border-radius: .285716rem;
@@ -12,7 +12,7 @@
   border-radius: .28571429rem;
   background-color: #bad5dd;
   height: 200px;
-  width: 450px;
+  width: 100%;
   border: none;
   bottom: 500px;
   background-image: url("https://image.flaticon.com/icons/svg/251/251942.svg");
@@ -27,7 +27,7 @@
   border-radius: .28571429rem;
   background-color: #FC7E7E;
   height: 145px;
-  width: 220px;
+  width: 48.889%;
   border: none;
   bottom: 345px;
   left: 0px;
@@ -43,7 +43,7 @@
   border-radius: .28571429rem;
   background-color: #F2CC7B;
   height: 145px;
-  width: 220px;
+  width: 48.889%;
   border: none;
   bottom: 345px;
   right: 0px;
@@ -59,7 +59,7 @@
   border-radius: .28571429rem;
   background-color: #A5C6EF;
   height: 125px;
-  width: 450px;
+  width: 100%;
   border: none;
   bottom: 210px;
   background-image: url('https://image.flaticon.com/icons/svg/571/571475.svg');
@@ -74,7 +74,7 @@
   border-radius: .28571429rem;
   background-color: #A2D8C0;
   height: 200px;
-  width: 290px;
+  width: 64.444%;
   border: none;
   bottom: 0px;
   left: 0px;
@@ -91,7 +91,7 @@
   border-radius: .28571429rem;
   background-color: #e5a5c2;
   height: 200px;
-  width: 150px;
+  width: 33.333%;
   border: none;
   bottom: 0px;
   right: 0px;

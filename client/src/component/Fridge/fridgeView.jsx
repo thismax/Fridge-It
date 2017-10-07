@@ -35,8 +35,6 @@ class Fridge extends Component {
     })
   };
 
-
-
   render() {
     let { fridge, fridgeActions, itemActions } = this.props;
     const types = [
@@ -100,11 +98,15 @@ class Fridge extends Component {
                 id='phone'
                 placeholder='Phone Number'
               />
+              <Form.Input
+                id='time'
+                placeholder='HH:MM'
+              />
               <Form.Button content={'Add phone'}
                 onClick={(e) => {
                   console.log(fridge.id)
                   e.preventDefault();
-                  fridgeActions.updateFridgePhone(fridge.id, document.getElementById('phone').value);
+                  fridgeActions.updateFridgePhone(fridge.id, document.getElementById('phone').value, document.getElementById('time').value);
                   localStorage.setItem('visitorId', document.getElementById('inputFid').value);
                   location.reload();
                   document.getElementById('phone').value = '';

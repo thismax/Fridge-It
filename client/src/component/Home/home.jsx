@@ -56,6 +56,7 @@ class Home extends Component {
                   users: userArray,
                   name: username,
                   phone: '',
+                  time: '',
                 }
                 actions.addFridge(fridgeObj);
               }}

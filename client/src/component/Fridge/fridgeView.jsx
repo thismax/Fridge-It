@@ -158,4 +158,4 @@ const fridgeDispatch = (dispatch) => {
   }
 };
 
-export default connect(fridgeState, fridgeDispatch)(Fridge); 
+export default connect(fridgeState, fridgeDispatch)(Fridge);

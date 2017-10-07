@@ -23,14 +23,18 @@ class Home extends Component {
       <div>
             <div className="container">
               <div className="row">
+                <div className="col-8 col-sm-6">
               <div>
                 <Fridge />
               </div>
-            <div>
-              {/* <Search /> */}
+              <div>
+              <Search />
             </div>
+              </div>
+              <div className="col-4 col-sm-6">
           <div>
-            {/* <Messages /> */}
+            <Messages />
+          </div>
           </div>
           </div>
           </div>

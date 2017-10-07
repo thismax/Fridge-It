@@ -18,25 +18,22 @@ class Home extends Component {
 
   render() {
     let { actions, fetched, posted } = this.props;
-
     if (fetched || posted) {
       return (
       <div>
-        <div className="row">
-          <div className="col col-sm-3"> 
-            <div className="row">
-              hello
-              <Fridge />
+            <div className="fridge-container">
+              <div className="row">
+              <div>
+                <Fridge />
+              </div>
+            <div>
+              {/* <Search /> */}
             </div>
-            <br/>
-            <div className="row">
-              <Search />
-            </div>
+          <div>
+            {/* <Messages /> */}
           </div>
-          <div className="col col-sm-3">
-            <Messages />
           </div>
-        </div>
+          </div>
       </div>
       )
     } else {

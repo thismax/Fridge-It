@@ -125,7 +125,7 @@ class Fridge extends Component {
 >>>>>>> remove semantic UI styling
           <ItemAddition />
         </div>
-        <div className={styles.container}>
+        <div className="fridge-container">
           {types.map(type => {
             let filteredItems = this.filterItems(type.name);
               return (

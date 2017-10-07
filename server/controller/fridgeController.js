@@ -8,6 +8,7 @@ module.exports = {
       users: req.body.users,
       name: req.body.name,
       phone: req.body.phone,
+      time: req.body.time,
     })
     .then((data) => {
       res.send(data);
@@ -29,14 +30,21 @@ module.exports = {
     })
   },
 
-  updatePhone: (req, res) => {
+  updatePhone: (req, res) => { 
+
+
+
+
+
+
     Fridge.update({
       phone: req.body.phone,
+      time: req.body.time,
     }, {
       where: {id: req.params.fridgeId}
     })
-    .then((data) => {
-      res.send(data);
+    .then(() => {
+      res.send();
     })
     .catch(err => {
       res.status(500).send(err);

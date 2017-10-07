@@ -41,6 +41,7 @@ class itemAddition extends Component {
       name.value = '';
       qty.value = '';
       type = '';
+      console.log(item);
     }
     const options = [
       {
@@ -74,8 +75,9 @@ class itemAddition extends Component {
         value: "misc"
       }
     ]; 
-
+    console.log('moment is: ', moment());
     return (
+      
       <form 
         onSubmit={() => {
           handleSubmit();
@@ -89,6 +91,7 @@ class itemAddition extends Component {
             width={2}
             type='number'
             id="inputQty"
+            placeholder="select quantity"
           />
           <select name="categories" id="inputType" onChange={(e, {value}) => {type = value;}}>
           <option value="" disabled selected>Select Category</option>
@@ -101,16 +104,21 @@ class itemAddition extends Component {
             })}
           </select>
 
-          <Form.Select
+          {/* <Form.Select
             placeholder={moment()}
             id="expiry"
             control={DatePicker}
             selected={this.state.startDate}
             onChange={this.handleChange}
-          />
-          <Form.Button 
-            content='Go'
-          />
+          /> */}
+          <DatePicker 
+            placeholderText={moment()}
+            dateFormat="YYYY/MM/DD"
+            id="expiry"
+            selected={this.state.date}
+            onChange={this.handleChange}
+            />
+          <button className="btn btn-success">Go</button>
       </form>
     )
   }

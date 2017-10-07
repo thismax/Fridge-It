@@ -34,10 +34,8 @@ module.exports = {
 
   updatePhone: (req, res) => { 
 
-    [hours, mins] = req.body.time.split(':');
-    schedule.scheduleJob({hour: hours, minute: mins}, smsTrigger);
-
-
+    let [hours, mins] = req.body.time.split(':');
+    schedule.scheduleJob({hour: hours, minute: mins}, () => {smsTrigger(req, res)});
 
     Fridge.update({
       phone: req.body.phone,

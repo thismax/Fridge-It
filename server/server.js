@@ -3,8 +3,6 @@ const parser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path');
-var schedule = require('node-schedule');
-const smsTrigger = require('./controller/itemController').smsMessage;
 require('dotenv').config();
 
 // File imports
@@ -27,11 +25,6 @@ app.use('/api', routes);
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/public/index.html'));
 })
-
-// Scheduler for expiring items
-schedule.scheduleJob({hour:17, minute:14, second:55}, () => {
-  log('hi')
-});
 
 // Server Initialization
 db.fridge.sync()

@@ -106,7 +106,7 @@ class Fridge extends Component {
                 onClick={(e) => {
                   console.log(fridge.id)
                   e.preventDefault();
-                  fridgeActions.updateFridgePhone(fridge.id, document.getElementById('phone').value, document.getElementById('time').value);
+                  fridgeActions.updateFridgePhone(fridge.id, fridge.name, document.getElementById('phone').value, document.getElementById('time').value);
                   localStorage.setItem('visitorId', document.getElementById('inputFid').value);
                   location.reload();
                   document.getElementById('phone').value = '';

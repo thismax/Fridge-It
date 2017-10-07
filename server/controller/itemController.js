@@ -69,14 +69,16 @@ module.exports = {
   },
 
 
-  checkExipredItems: () => {
+  checkExipredItems: (name) => {
 
     return new Promise((resolve, reject) => {
       let batchObject = {};
       let expiringItems = [];
       let fridgesToPilfer =[];
   
-      Item.findAll({raw: true})
+      Item.findAll({where: {
+        user: name,
+      }, raw: true})
       .then((data) => {
         expiringItems = data.filter((item) => {
           return (new Date(item.expiry)) - new Date() < 259200000;
@@ -95,36 +97,36 @@ module.exports = {
         })
       })
       .then((data) => {
-        Fridge.findAll({
-          where: {
-            id: fridgesToPilfer,
-            phone: {$ne: ''},
-          },
-          raw: true,
-        })
-        .then((data) => {
-          if (data.length > 0) {
-            _.each(data, (fridge) => {
-              batchObject[fridge.phone] = batchObject[fridge.id]
-              delete batchObject[fridge.id]
-            });
-          }
-        })
-        .then(() => {
-          resolve(batchObject);
-        })
+        if (name) {
+          Fridge.findAll({
+            where: {
+              name,
+            },
+            raw: true,
+          })
+          .then((data) => {
+            if (data.length > 0) {
+              _.each(data, (fridge) => {
+                batchObject[fridge.phone] = batchObject[fridge.id]
+                delete batchObject[fridge.id]
+              });
+            }
+          })
+          .then(() => {
+            resolve(batchObject);
+          })
+          .catch(err => {
+            reject(err)
+          })
+        }
       })
-      .catch(err => {
-        reject(err)
-      })
-        
     });
 
   },
 
-  smsMessage: (req, res) => {
+  smsMessage: (req, res, inputphone) => {
 
-    module.exports.checkExipredItems()
+    module.exports.checkExipredItems(req.body.user)
     .then((results) => {
 
       if (Object.keys(results).length === 0 && results.constructor === Object) {
@@ -166,10 +168,13 @@ module.exports = {
 
     })
     .then((results) => {
-      if (req) res.send('test worked')
+      // if (req) res.send('test worked')
     })
     .catch((err) => {
-      if (req) res.send('test failed')
+      console.log('====================================')
+      console.log(err)
+      console.log('====================================')
+      // if (req) res.status(500).send(err)
     })
   
   },

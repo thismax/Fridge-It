@@ -105,20 +105,20 @@ class itemAddition extends Component {
             })}
           </select>
 
-          {/* <Form.Select
+          <Form.Select
             placeholder={moment()}
             id="expiry"
             control={DatePicker}
             selected={this.state.startDate}
             onChange={this.handleChange}
-          /> */}
-          <DatePicker 
+          />
+          {/* <DatePicker 
             placeholderText={moment()}
             dateFormat="YYYY/MM/DD"
             id="expiry"
             selected={this.state.date}
             onChange={this.handleChange}
-            />
+            /> */}
           <button className="btn btn-default">Go</button>
       </form>
     )

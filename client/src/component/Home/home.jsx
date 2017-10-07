@@ -65,7 +65,7 @@ class Home extends Component {
           </div>
           <div className="col col-sm-3">
             <form>
-                <input id="joinFridgeInput" placeholder="Enter Fridge Owner's Name" />
+                <input id="joinFridgeInput" placeholder="Enter Fridge Owner's Name" className="form-control" />
                 <button
                 onClick={(e) => {
                     e.preventDefault();

@@ -43,10 +43,14 @@ class SearchListView extends Component {
       return (
         <div>
           <h2 className='ui dividing header'>Recommended Recipes</h2>
+          <div className="container">
           <div className="row">
             {top3.map(recipe => {
-              return <SearchListEntry {...actions} key={recipe.id} recipe={recipe} />
+              return (
+                <SearchListEntry {...actions} key={recipe.id} recipe={recipe} />
+              )
             })}
+          </div>
           </div>
         </div>
       );

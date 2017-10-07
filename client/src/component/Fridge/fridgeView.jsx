@@ -86,6 +86,7 @@ class Fridge extends Component {
           <form>
               <input
                 placeholder='Fridge ID' id="inputFid"
+                className="form-control"
               />
               <button className="btn btn-success" 
                 onClick={(e) => {
@@ -135,7 +136,7 @@ class Fridge extends Component {
               )
           })}
         </div>
-        <ShareWidget shareUrl={'fridgeit.io\/' + (fridge.name && fridge.name.split('@')[0])} title="Hey! I'm using Fridge-It and it's awesome. Check out my fridge, yo."/>
+        <h5>Share this Fridge! </h5><ShareWidget shareUrl={'fridgeit.io\/' + (fridge.name && fridge.name.split('@')[0])} title="Hey! I'm using Fridge-It and it's awesome. Check out my fridge, yo."/>
       </div>
     )
   }

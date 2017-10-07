@@ -84,10 +84,11 @@ class itemAddition extends Component {
         }}
       >
           <input 
+          className="form-control"
             placeholder='Type name here'
             id="inputItm"
           />
-          <input 
+          <input className="form-control"
             width={2}
             type='number'
             id="inputQty"

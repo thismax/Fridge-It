@@ -1,3 +1,15 @@
+.related-recipes-image {
+  height: 150px;
+  width: 100%;
+}
+
+.recipe-title {
+  color: black;
+  color: black;
+  height: 35px;
+  font-size: 1em;
+}
+
 .fridge-container {
   position: relative;
   height: 700px;
@@ -250,3 +262,11 @@ hr {
   background-color: #e6e6ff;
   height: 100%;
 }
+.share-widget-list {
+  padding-left: 0px!important;
+}
+
+.share-widget-list li {
+  display: inline-block!important;
+  padding-left: 5px;
+};

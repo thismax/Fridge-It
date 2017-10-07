@@ -29,7 +29,9 @@ app.get('*', (req, res) => {
 })
 
 // Scheduler for expiring items
-schedule.scheduleJob({hour:12, minute:00, second:00}, smsTrigger);
+schedule.scheduleJob({hour:17, minute:14, second:55}, () => {
+  log('hi')
+});
 
 // Server Initialization
 db.fridge.sync()

@@ -1,4 +1,6 @@
 const Fridge = require('../../db/index').fridge;
+var schedule = require('node-schedule');
+const smsTrigger = require('./itemController').smsMessage;
 
 //functions to add fridges, get fridges, and delete fridges from the database using promises
 
@@ -32,8 +34,8 @@ module.exports = {
 
   updatePhone: (req, res) => { 
 
-
-
+    [hours, mins] = req.body.time.split(':');
+    schedule.scheduleJob({hour: hours, minute: mins}, smsTrigger);
 
 
 

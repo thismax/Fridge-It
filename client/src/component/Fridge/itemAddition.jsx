@@ -40,8 +40,9 @@ class itemAddition extends Component {
       itemActions.addItem(item, fridge.id);
       name.value = '';
       qty.value = '';
+      type = '';
+      console.log(item);
     }
-
     const options = [
       {
         key: 1, 
@@ -74,44 +75,52 @@ class itemAddition extends Component {
         value: "misc"
       }
     ]; 
-
+    console.log('moment is: ', moment());
     return (
-      <Form 
+      
+      <form 
         onSubmit={() => {
           handleSubmit();
         }}
       >
-        <Form.Group inline>
-          <Form.Input 
+          <input 
+          className="form-control"
             placeholder='Type name here'
             id="inputItm"
           />
-          <Form.Input 
+          <input className="form-control"
             width={2}
             type='number'
             id="inputQty"
+            placeholder="select quantity"
           />
-          <Form.Select 
-            placeholder='Browse categories' 
-            options={options} 
-            id="inputType"
-            onChange={(e, {value}) => {
-              type = value;
-            }}
-          />
+          <select name="categories" id="inputType" onChange={(e, {value}) => {type = value;}}>
+          <option value="" disabled selected>Select Category</option>
+              <option>{options[0].text} </option>
+              <option>{options[1].text} </option>
+              <option>{options[2].text} </option>
+              <option>{options[3].text} </option>
+              <option>{options[4].text} </option>
+              <option>{options[5].text} </option>
+            })}
+          </select>
+
           <Form.Select
             placeholder={moment()}
             id="expiry"
             control={DatePicker}
             selected={this.state.startDate}
             onChange={this.handleChange}
-            showTimeSelect
           />
-          <Form.Button 
-            content='Go'
-          />
-        </Form.Group>
-      </Form>
+          {/* <DatePicker 
+            placeholderText={moment()}
+            dateFormat="YYYY/MM/DD"
+            id="expiry"
+            selected={this.state.date}
+            onChange={this.handleChange}
+            /> */}
+          <button className="btn btn-default">Go</button>
+      </form>
     )
   }
 };

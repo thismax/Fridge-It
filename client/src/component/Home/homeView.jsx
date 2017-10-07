@@ -3,7 +3,6 @@ import { Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
-import {Button, Menu, Container, Image } from 'semantic-ui-react';
 
 import Search from '../Search/searchView.jsx';
 import Home from '../Home/home.jsx';
@@ -18,62 +17,48 @@ class HomeView extends Component {
     if(localStorage.getItem('userid')) {
       return (
         <div>
-        <style>{`
-          #bar {
-            background-color: #2185d0;
-          }
-          body > div,
-          body > div > div,
-          body > div > div > div.home-form {
-            padding-top: 3%;
-            padding-left: 5%;
-            padding-right: 5%;
-          }
-        `}</style>
-        <Router history={this.props.history}>
-          <div>
-            <Menu fixed='top' size='large' id='bar'>
-              <Container>
-                <Menu.Item>
-                  <img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"/>
-                </Menu.Item>
-                <Menu.Item>
-                  <Link to="/home">
-                    <Button color={'blue'} content={'Home'} size={'huge'}/>
-                  </Link>
-                </Menu.Item>
-                <Menu.Item>
-                  <Link to="/search">
-                    <Button color={'blue'} content={'Recipe'} size={'huge'}/>
-                  </Link>
-                </Menu.Item>
-                <Menu.Item position={'right'} >
-                  <Button content={localStorage.getItem('name')} color={'blue'} size={'huge'} />
-                  <Button as='a' color={'blue'} content={'Logout'} size={'huge'}
-                  onClick={(e) => {
+
+          <Router history={this.props.history}>
+              <div>
+                <nav className="navbar navbar-expand-lg navbar-light">   
+                  <a className="navbar-brand" href="#"><img src="https://cdn0.iconfinder.com/data/icons/household-appliances-icons-set-cartoon-style/512/a672-512.png"  width="30" height="30" alt="" /></a>
+                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                  </button>
+                  <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                      <li className="nav-item">
+                        <Link to="/" className="nav-link">Fridge-It</Link>
+                      </li>
+                      <li className="nav-item">
+                      <Link to="/home" className="nav-link">Home</Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link to="/search" className="nav-link">Recipe</Link>
+                      </li>
+                      <li>
+                      {localStorage.getItem('name')}
+                        </li>
+                        <li>
+                        <button className="btn btn-success" onClick={(e) => {
                     e.preventDefault();
                     this.props.actions.logoutUser();
-                    }} />
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <Route exact path="/home" render={() => {return <Home />}}/>
-            <Route path="/search" render={() => {return <Search />}}/>
-          </div>
-        </Router>
-        </div>
+                    }}>Log Out</button>
+                          </li>
+                    </ul>
+                  </div>
+                </nav>
+
+                <Route exact path="/home" render={() => {return <Home/>}} />
+                <Route path="/search" render={() => {return <Search/>}} />
+
+                </div> 
+              </Router>
+       </div>
       );
     } else {
       return (
         <div>
-        <style>{`
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%;
-            padding-top: 80px;
-          }
-        `}</style>
         <Redirect exact to={{ pathname: '/login'}} />
         </div>
       )

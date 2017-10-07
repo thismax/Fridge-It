@@ -16,12 +16,12 @@ class SearchView extends Component {
 
     if(recipeList.length > 0) {
       return (
-        <div>
-          <Card.Group itemsPerRow={3}>
+        <div className="card">
+          <h3 itemsPerRow={3}>
             {recipeList.map(recipe => (
               <SearchListEntry key={recipe.id} recipe={recipe} />
             ))}
-          </Card.Group>
+          </h3>
         </div>
       )
     }

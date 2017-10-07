@@ -22,6 +22,7 @@ export function addFridge(fridge) {
       users: fridge.users,
       name: fridge.name,
       phone: fridge.phone,
+      time: fridge.time,
     })
       .then(({ data }) => {
         dispatch({type: 'POST_FRIDGE_FULFILLED', payload: data})
@@ -32,3 +33,14 @@ export function addFridge(fridge) {
   };
 };
 
+export function updateFridgePhone(fridgeId, phone, time) {
+  return function(dispatch) {
+    axios.post(`/api/fridge/update/${fridgeId}`, { phone, time })
+      .then(({ data }) => {
+        dispatch({type: 'POST_FRIDGE_FULFILLED', payload: data})
+      })
+      .catch(err => {
+        dispatch({type: 'POST_FRIDGE_REJECTED', payload: err})
+      });
+  };
+};

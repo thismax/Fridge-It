@@ -3,7 +3,6 @@ require('dotenv').config();
 const Item = require('../../db/index').fridgeItems;
 const Fridge = require('../../db/index').fridge;
 var client = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_AUTH);
-var schedule = require('node-schedule');
 var Promise = require('bluebird');
 
 
@@ -167,10 +166,10 @@ module.exports = {
 
     })
     .then((results) => {
-      res.send('messages sent');
+      if (req) res.send('test worked')
     })
     .catch((err) => {
-      res.status(500).send('did not work', err);
+      if (req) res.send('test failed')
     })
   
   },

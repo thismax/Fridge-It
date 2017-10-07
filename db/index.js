@@ -13,6 +13,9 @@ const Fridge = sequelize.define('fridge', {
   phone: {
     type: Sequelize.STRING
   },
+  time: {
+    type: Sequelize.STRING
+  },
 });
 
 const FridgeItems = sequelize.define('fridgeItem', {

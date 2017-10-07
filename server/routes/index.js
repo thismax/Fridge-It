@@ -14,7 +14,7 @@ router.patch('/allMessages/:id', messages.updateMessages);
 router.post('/fridge', fridge.addFridge);
 router.get('/fridge/:name', fridge.getFridge);
 router.delete('/fridge/:fridgeId', fridge.deleteFridge);
-router.post('/fridge/:fridgeId', fridge.updatePhone)
+router.post('/fridge/update/:fridgeId', fridge.updatePhone)
 
 // Items Routes
 router.get('/items/:fridgeId', item.getAllItems);

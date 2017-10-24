@@ -12,14 +12,22 @@ class itemAddition extends Component {
     super(props);
     this.state = {
       startDate: moment(),
+      type: '',
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
   
   handleChange(date) {
     this.setState({
       startDate: date
     });
+  }
+
+  handleSelect(e, {value}) {
+    this.setState({
+      type: value,
+    })
   }
 
   //form to input fridge items
@@ -35,7 +43,7 @@ class itemAddition extends Component {
       let qty = document.getElementById('inputQty');
       item.quantity = qty.value;
       item.expiry = document.getElementById('expiry').value;
-      item.type = type;
+      item.type = this.state.type;
       item.user = username;
       itemActions.addItem(item, fridge.id);
       name.value = '';
@@ -95,9 +103,7 @@ class itemAddition extends Component {
             placeholder='Browse categories' 
             options={options} 
             id="inputType"
-            onChange={(e, {value}) => {
-              type = value;
-            }}
+            onChange={this.handleSelect}
           />
           <Form.Select
             placeholder={moment()}

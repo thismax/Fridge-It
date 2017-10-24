@@ -135,8 +135,8 @@ class LandingPage extends Component {
             </Divider>
             <Header as='h3' style={{ fontSize: '2em' }}>Members</Header>
             <p style={{ fontSize: '1.33em' }}>
-              TADA is an acronym of the creators of this group: Tiffany Phan, Angie Tang, Daniel Chong and Aaron Liss.
-              <br/>The project owner of this app is Tiffany Phan.
+              Dev-Team: Max Jacobs, Alex Leigh, Tiffany Wang, Jaafar Skafi, Tiffany Phan, Angie Tang, Daniel Chong and Aaron Liss.
+              <br/>The project owners of this app are Max Jacobs and Tiffany Phan.
               <br/>The scrum master of this app is Daniel Chong. 
             </p>
             <Button as='a' href="https://github.com/TEAM-TADA" size='large' target="_blank">I'm Still Quite Interested</Button>

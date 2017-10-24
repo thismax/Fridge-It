@@ -1,7 +1,11 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DB_URL);
+const sequelize = new Sequelize(process.env.NAME, process.env.USERNAME, process.env.PASSWORD, {
+  host: process.env.HOST,
+  port: process.env.RDS_PORT,
+  dialect: 'postgres',
+});
 
 const Fridge = sequelize.define('fridge', {
   users: {
@@ -73,16 +77,6 @@ const MessageInfo = sequelize.define('messageInfo', {
     key: 'id',
   }
 });
-
-
-// DATABASE RESTRUCTURED!  Leave these commented out for now.
-
-// // Foreign Keys
-// FridgeItems.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
-// Fridge.hasMany(FridgeItems, {allowNull: true, onDelete: 'CASCADE'});
-
-// MessageInfo.belongsTo(Fridge, {allowNull: true, onDelete: 'CASCADE'});
-// Fridge.hasMany(MessageInfo, {allowNull: true, onDelete: 'CASCADE'});
 
 module.exports.fridge = Fridge;
 module.exports.fridgeItems = FridgeItems;

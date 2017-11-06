@@ -7,6 +7,9 @@ const APP_DIR = path.resolve(__dirname, 'client/src');
 
 module.exports = {
   entry: APP_DIR + '/index.jsx',
+  node: {
+    fs: 'empty'
+  },
   module: {
     loaders: [
       {

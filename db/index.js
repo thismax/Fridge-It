@@ -1,11 +1,7 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.NAME, process.env.USERNAME, process.env.PASSWORD, {
-  host: process.env.HOST,
-  port: process.env.RDS_PORT,
-  dialect: 'postgres',
-});
+const sequelize = new Sequelize(process.env.NAME);
 
 const Fridge = sequelize.define('fridge', {
   users: {

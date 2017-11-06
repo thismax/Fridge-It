@@ -26,6 +26,12 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/public/index.html'));
 })
 
+app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 // Server Initialization
 db.fridge.sync()
   .then(() => {

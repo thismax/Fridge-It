@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 import * as authActions from '../../actions/authActions.js';
 
@@ -20,58 +19,52 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className='login-form'>
-        <style>{`
-          body > div,
-          body > div > div,
-          body > div > div > div.login-form {
-            height: 100%;
-            padding-top: 8%;
-            background-color: #e6e6ff;
-          }
-        `}</style>
-        <Grid
-          textAlign='center'
-          style={{ height: '100%' }}
-          verticalAlign='middle'
-        >
-          <Grid.Column style={{ maxWidth: 500 }}>
-            <Header as='h2' color='teal' textAlign='center'>
-              {' '}Sign Up
-            </Header>
-            <Form size='large'>
-              <Segment stacked>
-                <Form.Input
-                  id="inputSignupEmail"
-                  fluid
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='E-mail address'
-                />
-                <Form.Input
-                  id="inputSignupPw"
-                  fluid
-                  icon='lock'
-                  iconPosition='left'
-                  placeholder='Password'
-                  type='password'
-                />
-                <Button color='teal' fluid size='large'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    this.emailSignUp();
-                  }}>Sign Up</Button>
-              </Segment>
 
-                <Button color='facebook' fluid size='large'
-                onClick={() => this.props.actions.googleLogin()}>Sign Up with Google</Button>
-            </Form>
-            <Message>
-              Already have an account? <a href='/login'> Log In</a>
-            </Message>
-          </Grid.Column>
-        </Grid>
+      <div>
+      <div className="purple-background"></div>
+      <div className='container'>
+      <div className="row">
+        <div className="col sign-in-box">
+          <h2>
+            {' '}Sign Up
+          </h2>
+          <form>
+            <div className="form-group">
+            <div className="inner-addon left-addon">
+            <i className="fa fa-user" aria-hidden="true"></i>
+              <input
+                id="inputSignupEmail"
+                className="form-control"
+                placeholder='E-mail address'
+              />
+            </div>
+            </div>
+            <div className="form-group">
+            <div className="inner-addon left-addon">
+            <i className="fa fa-lock" aria-hidden="true"></i>
+              <input
+                className="form-control" 
+                id="inputSignupPw"
+                placeholder='Password'
+                type='password'
+              />
+            </div>
+              <button className="btn btn-success btn-lg btn-block login-button" 
+              onClick={(e) => {
+                e.preventDefault();
+                this.emailSignUp();
+              }}>Sign Up</button>
+            </div>
+              <button className="btn btn-primary btn-lg btn-block" onClick={() => this.props.actions.googleLogin()}>Sign Up with Google</button>
+          </form>
+          <div className="card sign-up-box">
+            <span>Already have an account?<a href='/login'>Log In</a></span>
+          </div>
+        </div>
       </div>
+      </div>
+      </div>
+
     )
   }
 };

@@ -35,21 +35,20 @@ class MessageListView extends Component {
       return (
         <div>
           <h2 className="ui dividing header">Message Board</h2>
-          <Form>
-            <Form.Group inline>
-              <Form.Input 
+          <form>
+              <input 
+              className="form-control"
                 type="text"
                 id="inputMsg"
                 placeholder="Enter message here"
               /> 
-              <Form.Button onClick={(e) => {
+              <button className="btn btn-default" onClick={(e) => {
                 e.preventDefault();
                 handleSubmit();
                 }}
                 content="Submit"
-              />
-            </Form.Group>
-          </Form>
+              >Submit</button>
+          </form>
           {messageList.length > 0 ? messageList.map(message => (
             <MessageListEntry {...actions} key={message.id} message={message} />
           )): <h3> Your message board is empty </h3>}

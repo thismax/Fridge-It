@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Form, Grid, Button } from 'semantic-ui-react';
 
 import Messages from '../Message/messagesListView.jsx';
 import Search from '../Search/searchListView.jsx';
@@ -19,33 +18,35 @@ class Home extends Component {
 
   render() {
     let { actions, fetched, posted } = this.props;
-
     if (fetched || posted) {
       return (
-      <Grid divided="vertically">
-        <Grid.Row columns={2} centered>
-          <Grid.Column width={11}> 
-            <Grid.Row>
-              <Fridge />
-            </Grid.Row>
-            <br/>
-            <Grid.Row textAlign={'center'}>
+      <div>
+            <div className="container">
+              <div className="row">
+                <div className="col-8 col-sm-6">
+              <div>
+                <Fridge />
+              </div>
+              <div>
               <Search />
-            </Grid.Row>
-          </Grid.Column>
-          <Grid.Column width={5}>
+            </div>
+              </div>
+              <div className="col-4 col-sm-6">
+          <div>
             <Messages />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+          </div>
+          </div>
+          </div>
+          </div>
+      </div>
       )
     } else {
       let username = localStorage.getItem('name');
 
       return (
-        <Grid centered columns={2}>
-          <Grid.Column width={4}>
-            <Button content={'Create a Fridge'} color={'blue'}
+        <div>
+          <div className="col col-sm-3">
+            <button 
               onClick={(e) => {
                 e.preventDefault();
                 
@@ -60,22 +61,21 @@ class Home extends Component {
                 }
                 actions.addFridge(fridgeObj);
               }}
-            />
-          </Grid.Column>
-          <Grid.Column width={6}>
-            <Form>
-              <Form.Group>
-                <Form.Input id="joinFridgeInput" placeholder="Enter Fridge Owner's Name" />
-                <Form.Button content={'Join a Fridge'} color={'blue'}
-                  onClick={(e) => {
+            >Create a fridge</button>
+          </div>
+          <div className="col col-sm-3">
+            <form>
+                <input id="joinFridgeInput" placeholder="Enter Fridge Owner's Name" className="form-control" />
+                <button
+                onClick={(e) => {
                     e.preventDefault();
                     actions.getFridge(document.getElementById('joinFridgeInput').value);
                   }}
-                />
-              </Form.Group>
-            </Form>
-          </Grid.Column>
-        </Grid>
+                > 'Join a Fridge'
+                </button>
+            </form>
+          </div>
+        </div>
       )
     }
   }

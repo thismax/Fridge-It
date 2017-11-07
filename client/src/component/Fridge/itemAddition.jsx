@@ -48,8 +48,9 @@ class itemAddition extends Component {
       itemActions.addItem(item, fridge.id);
       name.value = '';
       qty.value = '';
+      type = '';
+      console.log(item);
     }
-
     const options = [
       {
         key: 1, 
@@ -82,22 +83,24 @@ class itemAddition extends Component {
         value: "misc"
       }
     ]; 
-
+    console.log('moment is: ', moment());
     return (
-      <Form 
+      
+      <form 
         onSubmit={() => {
           handleSubmit();
         }}
       >
-        <Form.Group inline>
-          <Form.Input 
+          <input 
+          className="form-control"
             placeholder='Type name here'
             id="inputItm"
           />
-          <Form.Input 
+          <input className="form-control"
             width={2}
             type='number'
             id="inputQty"
+            placeholder="select quantity"
           />
           <Form.Select 
             placeholder='Browse categories' 
@@ -111,13 +114,16 @@ class itemAddition extends Component {
             control={DatePicker}
             selected={this.state.startDate}
             onChange={this.handleChange}
-            showTimeSelect
           />
-          <Form.Button 
-            content='Go'
-          />
-        </Form.Group>
-      </Form>
+          {/* <DatePicker 
+            placeholderText={moment()}
+            dateFormat="YYYY/MM/DD"
+            id="expiry"
+            selected={this.state.date}
+            onChange={this.handleChange}
+            /> */}
+          <button className="btn btn-default">Go</button>
+      </form>
     )
   }
 };

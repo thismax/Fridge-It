@@ -24,7 +24,9 @@ const store = createStore(FridgeApp, middleware);
 DOMReact.render(
   <Provider store={store}>
     <Router history={history}>
+      <div>
       <App history={history} />
+      </div>
     </Router>
   </Provider>,
   document.getElementById('app')

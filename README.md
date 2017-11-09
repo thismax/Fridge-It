@@ -1,6 +1,4 @@
 ![fridge-it 2017-11-08 09-43-44](https://user-images.githubusercontent.com/6326036/32583639-77ef939e-c4a9-11e7-9f56-3131f7862827.png)
-![fridge-it 2017-11-08 09-44-14](https://user-images.githubusercontent.com/6326036/32583641-7a3c3f30-c4a9-11e7-94f1-6dc348ce4638.png)
-
 
 # Fridge-It
 
